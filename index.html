@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HormonCode - AI-gestützte Hormongesundheit für Frauen 40+</title>
+    <meta name="description" content="HormonCode bietet personalisierte Ernährungs- und Bewegungspläne mit KI-Technologie für Frauen ab 40. Optimiere deine Hormongesundheit natürlich.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* Technology Section */
+        .technology {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: #333;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i> HormonCode
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#technology">Technologie</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Deine Hormongesundheit, <br>optimiert mit KI</h1>
+                <p>Personalisierte Ernährungs- und Bewegungspläne für Frauen ab 40. <br>Wissenschaftlich fundiert, KI-gestützt, individuell angepasst.</p>
+                <a href="#contact" class="cta-button">
+                    <i class="fas fa-rocket"></i> Jetzt starten
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Warum HormonCode?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>KI-gestützte Personalisierung</h3>
+                    <p>Unsere fortschrittliche AI analysiert deine individuellen Bedürfnisse und erstellt maßgeschneiderte Pläne für optimale Hormonbalance.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-apple-alt"></i>
+                    <h3>Hormonfreundliche Ernährung</h3>
+                    <p>Speziell entwickelte Rezepte und Ernährungspläne, die deine Hormone natürlich unterstützen und das Wohlbefinden steigern.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Intelligente Bewegungspläne</h3>
+                    <p>Angepasste Workout-Routinen, die deinen Zyklus und Energielevel berücksichtigen für maximale Effektivität.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Fortschritts-Tracking</h3>
+                    <p>Überwache deine Entwicklung mit detailliertem Tracking und erhalte kontinuierliche Anpassungen deiner Pläne.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Evidenzbasiert</h3>
+                    <p>Alle Empfehlungen basieren auf aktueller wissenschaftlicher Forschung zur Hormongesundheit von Frauen 40+.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Benutzerfreundlich</h3>
+                    <p>Intuitive Benutzeroberfläche, die sich nahtlos in deinen Alltag integriert und einfach zu verwenden ist.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <h2>Über HormonCode</h2>
+                    <p>HormonCode revolutioniert die Gesundheitsvorsorge für Frauen ab 40 durch den Einsatz modernster KI-Technologie. Wir verstehen die einzigartigen Herausforderungen des Hormonwandels und bieten personalisierte Lösungen.</p>
+                    <p>Unser interdisziplinäres Team aus Ernährungswissenschaftlern, Endokrinologen und KI-Experten entwickelt innovative Ansätze für ganzheitliche Hormongesundheit.</p>
+                    <p>Mit wissenschaftlich fundierten Methoden und modernster Technologie helfen wir Frauen dabei, ihre beste Gesundheit zu erreichen und sich energiegeladen und ausgeglichen zu fühlen.</p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gesunde Frau" style="width: 100%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="technology">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Unsere Technologie</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <i class="fas fa-robot" style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;"></i>
+                    <h3>AWS Bedrock AI</h3>
+                    <p>Modernste Foundation Models für intelligente Analyse und Personalisierung</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-database" style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Kontinuierliche Verbesserung durch lernende Algorithmen</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-shield-alt" style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;"></i>
+                    <h3>Datensicherheit</h3>
+                    <p>Höchste Sicherheitsstandards für den Schutz deiner persönlichen Daten</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-cloud" style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;"></i>
+                    <h3>Cloud-Infrastruktur</h3>
+                    <p>Skalierbare und zuverlässige Cloud-basierte Architektur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kontaktiere uns</h2>
+            <p>Bereit für deine Hormongesundheits-Transformation?</p>
+            <div class="contact-info">
+                <div>
+                    <i class="fas fa-envelope" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3>E-Mail</h3>
+                    <p>info@hormoncode.com</p>
+                </div>
+                <div>
+                    <i class="fas fa-globe" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3>Website</h3>
+                    <p>www.hormoncode.com</p>
+                </div>
+                <div>
+                    <i class="fas fa-rocket" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3>Innovation</h3>
+                    <p>Powered by AI & AWS Bedrock</p>
+                </div>
+            </div>
+            <div style="margin-top: 3rem;">
+                <a href="mailto:info@hormoncode.com" class="cta-button">
+                    <i class="fas fa-paper-plane"></i> Jetzt Kontakt aufnehmen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 HormonCode. Alle Rechte vorbehalten. | Powered by AI Technology</p>
+            <p style="margin-top: 0.5rem; opacity: 0.7;">Innovating Women's Health with Artificial Intelligence</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
