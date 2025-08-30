@@ -6,7 +6,61 @@
     <title>HormonCode - AI-gestützte Hormongesundheit für Frauen 40+</title>
     <meta name="description" content="HormonCode bietet personalisierte Ernährungs- und Bewegungspläne mit KI-Technologie für Frauen ab 40. Optimiere deine Hormongesundheit natürlich.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ===== HORMONCODE DESIGN SYSTEM ===== */
+        :root {
+          /* Original HormonCode Color Palette */
+          --rose-pastel: #F8E8EA;
+          --sage-pastel: #E8F3E1;
+          --lavender-pastel: #F0E8F8;
+          --peach-pastel: #FFF0E8;
+          --mint-pastel: #E8F8F0;
+          --cream-base: #FEFCFB;
+          --rose-accent: #E91E63;
+          --sage-accent: #4CAF50;
+          --text-primary: #2D3748;
+          --text-secondary: #718096;
+          --text-muted: #A0AEC0;
+        }
+        
+        /* Original HormonCode Gradients */
+        .gradient-rose-modern {
+          background: linear-gradient(135deg, #FDA4AF 0%, #F472B6 100%);
+        }
+        
+        .gradient-sage-modern {
+          background: linear-gradient(135deg, #86EFAC 0%, #4ADE80 100%);
+        }
+        
+        .gradient-lavender-modern {
+          background: linear-gradient(135deg, #C4B5FD 0%, #A78BFA 100%);
+        }
+        
+        .gradient-peach-modern {
+          background: linear-gradient(135deg, #FED7AA 0%, #FB923C 100%);
+        }
+        
+        /* Original HormonCode Effects */
+        .glass-effect {
+          background: rgba(255, 255, 255, 0.85);
+          backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .shadow-soft {
+          box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+        }
+        
+        .shadow-medium {
+          box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.12), 0 4px 16px -4px rgba(0, 0, 0, 0.08);
+        }
+
+        .shadow-text-heavy {
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        /* ===== BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -14,10 +68,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--cream-base) 0%, var(--rose-pastel) 30%, var(--sage-pastel) 100%);
+            min-height: 100vh;
         }
 
         .container {
@@ -26,16 +81,20 @@
             padding: 0 20px;
         }
 
-        /* Header */
+        /* ===== HEADER ===== */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.12);
         }
 
         nav {
@@ -45,116 +104,210 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #FDA4AF 0%, #F472B6 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo-icon i {
+            color: white;
+            font-size: 24px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: var(--text-secondary);
             font-weight: 500;
-            transition: color 0.3s;
+            padding: 8px 16px;
+            border-radius: 12px;
+            transition: all 0.3s;
         }
 
         .nav-links a:hover {
-            color: #667eea;
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateY(-1px);
         }
 
-        /* Hero Section */
+        /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
-            color: white;
-            padding-top: 80px;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, var(--rose-pastel) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, var(--sage-pastel) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, var(--lavender-pastel) 0%, transparent 50%);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
             font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--rose-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
         }
 
         .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #FDA4AF 0%, #F472B6 100%);
             color: white;
-            padding: 15px 40px;
+            padding: 16px 32px;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
+            border-radius: 16px;
+            font-weight: 600;
             font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+            transition: all 0.3s;
+            box-shadow: 0 8px 30px -4px rgba(244, 114, 182, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 12px 40px -4px rgba(244, 114, 182, 0.4);
         }
 
-        /* Features Section */
+        /* ===== FEATURES SECTION ===== */
         .features {
-            padding: 100px 0;
-            background: white;
+            padding: 120px 0;
+            position: relative;
         }
 
         .features h2 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .features-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
 
         .feature-card {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 15px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            transition: transform 0.3s;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2.5rem;
+            border-radius: 24px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.15);
         }
 
-        .feature-card i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-card:nth-child(1) .feature-icon { background: linear-gradient(135deg, #FDA4AF 0%, #F472B6 100%); }
+        .feature-card:nth-child(2) .feature-icon { background: linear-gradient(135deg, #86EFAC 0%, #4ADE80 100%); }
+        .feature-card:nth-child(3) .feature-icon { background: linear-gradient(135deg, #C4B5FD 0%, #A78BFA 100%); }
+        .feature-card:nth-child(4) .feature-icon { background: linear-gradient(135deg, #FED7AA 0%, #FB923C 100%); }
+        .feature-card:nth-child(5) .feature-icon { background: linear-gradient(135deg, #FECACA 0%, #EF4444 100%); }
+        .feature-card:nth-child(6) .feature-icon { background: linear-gradient(135deg, #BFDBFE 0%, #3B82F6 100%); }
+
+        .feature-icon i {
+            font-size: 28px;
+            color: white;
         }
 
         .feature-card h3 {
             font-size: 1.5rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+            color: var(--text-primary);
         }
 
-        /* About Section */
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ===== ABOUT SECTION ===== */
         .about {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            padding: 120px 0;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
         }
 
         .about-content {
@@ -166,47 +319,93 @@
 
         .about h2 {
             font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 2rem;
+            color: var(--text-primary);
         }
 
         .about p {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
-            opacity: 0.9;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
-        /* Technology Section */
+        .about-image {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== TECHNOLOGY SECTION ===== */
         .technology {
-            padding: 100px 0;
-            background: #f8f9fa;
+            padding: 120px 0;
         }
 
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
         .tech-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
             text-align: center;
+            transition: all 0.3s;
         }
 
-        /* Contact Section */
+        .tech-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.12);
+        }
+
+        .tech-card i {
+            font-size: 2.5rem;
+            color: var(--rose-accent);
+            margin-bottom: 1rem;
+        }
+
+        .tech-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .tech-card p {
+            color: var(--text-secondary);
+        }
+
+        /* ===== CONTACT SECTION ===== */
         .contact {
-            padding: 100px 0;
-            background: #333;
-            color: white;
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--rose-pastel) 0%, var(--lavender-pastel) 100%);
             text-align: center;
         }
 
         .contact h2 {
             font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .contact-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
         }
 
         .contact-info {
@@ -216,15 +415,41 @@
             margin-top: 3rem;
         }
 
-        /* Footer */
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
+        .contact-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
         }
 
-        /* Responsive */
+        .contact-card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--rose-accent);
+        }
+
+        .contact-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.5rem;
@@ -236,17 +461,41 @@
             
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 3rem;
             }
+
+            .features h2, .contact h2 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <nav class="container">
-            <div class="logo">
-                <i class="fas fa-heartbeat"></i> HormonCode
-            </div>
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <span>HormonCode</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
@@ -260,11 +509,12 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Deine Hormongesundheit, <br>optimiert mit KI</h1>
-                <p>Personalisierte Ernährungs- und Bewegungspläne für Frauen ab 40. <br>Wissenschaftlich fundiert, KI-gestützt, individuell angepasst.</p>
+            <div class="hero-content fade-in">
+                <h1>Deine Hormongesundheit, optimiert mit KI</h1>
+                <p>Personalisierte Ernährungs- und Bewegungspläne für Frauen ab 40. Wissenschaftlich fundiert, KI-gestützt, individuell angepasst für deine Hormone.</p>
                 <a href="#contact" class="cta-button">
-                    <i class="fas fa-rocket"></i> Jetzt starten
+                    <i class="fas fa-rocket"></i>
+                    Jetzt starten
                 </a>
             </div>
         </div>
@@ -273,35 +523,48 @@
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
-            <h2>Warum HormonCode?</h2>
+            <h2 class="fade-in">Warum HormonCode?</h2>
+            <p class="features-subtitle fade-in">Revolutioniere deine Gesundheit mit modernster KI-Technologie</p>
             <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-brain"></i>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
                     <h3>KI-gestützte Personalisierung</h3>
                     <p>Unsere fortschrittliche AI analysiert deine individuellen Bedürfnisse und erstellt maßgeschneiderte Pläne für optimale Hormonbalance.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-apple-alt"></i>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
                     <h3>Hormonfreundliche Ernährung</h3>
                     <p>Speziell entwickelte Rezepte und Ernährungspläne, die deine Hormone natürlich unterstützen und das Wohlbefinden steigern.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-dumbbell"></i>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
                     <h3>Intelligente Bewegungspläne</h3>
                     <p>Angepasste Workout-Routinen, die deinen Zyklus und Energielevel berücksichtigen für maximale Effektivität.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <h3>Fortschritts-Tracking</h3>
                     <p>Überwache deine Entwicklung mit detailliertem Tracking und erhalte kontinuierliche Anpassungen deiner Pläne.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-user-md"></i>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
                     <h3>Evidenzbasiert</h3>
                     <p>Alle Empfehlungen basieren auf aktueller wissenschaftlicher Forschung zur Hormongesundheit von Frauen 40+.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-mobile-alt"></i>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
                     <h3>Benutzerfreundlich</h3>
                     <p>Intuitive Benutzeroberfläche, die sich nahtlos in deinen Alltag integriert und einfach zu verwenden ist.</p>
                 </div>
@@ -313,14 +576,14 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
-                <div>
+                <div class="fade-in">
                     <h2>Über HormonCode</h2>
                     <p>HormonCode revolutioniert die Gesundheitsvorsorge für Frauen ab 40 durch den Einsatz modernster KI-Technologie. Wir verstehen die einzigartigen Herausforderungen des Hormonwandels und bieten personalisierte Lösungen.</p>
                     <p>Unser interdisziplinäres Team aus Ernährungswissenschaftlern, Endokrinologen und KI-Experten entwickelt innovative Ansätze für ganzheitliche Hormongesundheit.</p>
                     <p>Mit wissenschaftlich fundierten Methoden und modernster Technologie helfen wir Frauen dabei, ihre beste Gesundheit zu erreichen und sich energiegeladen und ausgeglichen zu fühlen.</p>
                 </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gesunde Frau" style="width: 100%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gesunde Frau mit ausgeglichenen Hormonen">
                 </div>
             </div>
         </div>
@@ -329,25 +592,26 @@
     <!-- Technology Section -->
     <section id="technology" class="technology">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Unsere Technologie</h2>
+            <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2.5rem; font-weight: 700;" class="fade-in">Unsere Technologie</h2>
+            <p style="text-align: center; font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem;" class="fade-in">Powered by modernste AI und Cloud-Technologie</p>
             <div class="tech-grid">
-                <div class="tech-card">
-                    <i class="fas fa-robot" style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;"></i>
+                <div class="tech-card fade-in">
+                    <i class="fas fa-robot"></i>
                     <h3>AWS Bedrock AI</h3>
                     <p>Modernste Foundation Models für intelligente Analyse und Personalisierung</p>
                 </div>
-                <div class="tech-card">
-                    <i class="fas fa-database" style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;"></i>
+                <div class="tech-card fade-in">
+                    <i class="fas fa-database"></i>
                     <h3>Machine Learning</h3>
                     <p>Kontinuierliche Verbesserung durch lernende Algorithmen</p>
                 </div>
-                <div class="tech-card">
-                    <i class="fas fa-shield-alt" style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;"></i>
+                <div class="tech-card fade-in">
+                    <i class="fas fa-shield-alt"></i>
                     <h3>Datensicherheit</h3>
                     <p>Höchste Sicherheitsstandards für den Schutz deiner persönlichen Daten</p>
                 </div>
-                <div class="tech-card">
-                    <i class="fas fa-cloud" style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;"></i>
+                <div class="tech-card fade-in">
+                    <i class="fas fa-cloud"></i>
                     <h3>Cloud-Infrastruktur</h3>
                     <p>Skalierbare und zuverlässige Cloud-basierte Architektur</p>
                 </div>
@@ -358,28 +622,29 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Kontaktiere uns</h2>
-            <p>Bereit für deine Hormongesundheits-Transformation?</p>
+            <h2 class="fade-in">Kontaktiere uns</h2>
+            <p class="contact-subtitle fade-in">Bereit für deine Hormongesundheits-Transformation?</p>
             <div class="contact-info">
-                <div>
-                    <i class="fas fa-envelope" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                <div class="contact-card fade-in">
+                    <i class="fas fa-envelope"></i>
                     <h3>E-Mail</h3>
                     <p>info@hormoncode.com</p>
                 </div>
-                <div>
-                    <i class="fas fa-globe" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                <div class="contact-card fade-in">
+                    <i class="fas fa-globe"></i>
                     <h3>Website</h3>
                     <p>www.hormoncode.com</p>
                 </div>
-                <div>
-                    <i class="fas fa-rocket" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                <div class="contact-card fade-in">
+                    <i class="fas fa-rocket"></i>
                     <h3>Innovation</h3>
                     <p>Powered by AI & AWS Bedrock</p>
                 </div>
             </div>
-            <div style="margin-top: 3rem;">
+            <div style="margin-top: 3rem;" class="fade-in">
                 <a href="mailto:info@hormoncode.com" class="cta-button">
-                    <i class="fas fa-paper-plane"></i> Jetzt Kontakt aufnehmen
+                    <i class="fas fa-paper-plane"></i>
+                    Jetzt Kontakt aufnehmen
                 </a>
             </div>
         </div>
@@ -398,21 +663,47 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
         // Header background on scroll
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
+            const header = document.getElementById('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.classList.add('scrolled');
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.classList.remove('scrolled');
             }
         });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add visible class to hero content immediately
+        document.querySelector('.hero .fade-in').classList.add('visible');
     </script>
 </body>
 </html>
