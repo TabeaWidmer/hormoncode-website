@@ -5,59 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HormonCode - AI-gestützte Hormongesundheit für Frauen 40+</title>
     <meta name="description" content="HormonCode bietet personalisierte Ernährungs- und Bewegungspläne mit KI-Technologie für Frauen ab 40. Optimiere deine Hormongesundheit natürlich.">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ===== HORMONCODE DESIGN SYSTEM ===== */
+        /* ===== PROFESSIONAL DESIGN SYSTEM ===== */
         :root {
-          /* Original HormonCode Color Palette */
-          --rose-pastel: #F8E8EA;
-          --sage-pastel: #E8F3E1;
-          --lavender-pastel: #F0E8F8;
-          --peach-pastel: #FFF0E8;
-          --mint-pastel: #E8F8F0;
-          --cream-base: #FEFCFB;
-          --rose-accent: #E91E63;
-          --sage-accent: #4CAF50;
-          --text-primary: #2D3748;
-          --text-secondary: #718096;
-          --text-muted: #A0AEC0;
-        }
-        
-        /* Original HormonCode Gradients */
-        .gradient-rose-modern {
-          background: linear-gradient(135deg, #FDA4AF 0%, #F472B6 100%);
-        }
-        
-        .gradient-sage-modern {
-          background: linear-gradient(135deg, #86EFAC 0%, #4ADE80 100%);
-        }
-        
-        .gradient-lavender-modern {
-          background: linear-gradient(135deg, #C4B5FD 0%, #A78BFA 100%);
-        }
-        
-        .gradient-peach-modern {
-          background: linear-gradient(135deg, #FED7AA 0%, #FB923C 100%);
-        }
-        
-        /* Original HormonCode Effects */
-        .glass-effect {
-          background: rgba(255, 255, 255, 0.85);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .shadow-soft {
-          box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
-        }
-        
-        .shadow-medium {
-          box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.12), 0 4px 16px -4px rgba(0, 0, 0, 0.08);
-        }
-
-        .shadow-text-heavy {
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+          /* Premium Color Palette */
+          --primary-50: #fdf2f8;
+          --primary-100: #fce7f3;
+          --primary-200: #fbcfe8;
+          --primary-300: #f9a8d4;
+          --primary-400: #f472b6;
+          --primary-500: #ec4899;
+          --primary-600: #db2777;
+          --primary-700: #be185d;
+          --primary-800: #9d174d;
+          
+          --secondary-50: #f0fdf4;
+          --secondary-100: #dcfce7;
+          --secondary-200: #bbf7d0;
+          --secondary-300: #86efac;
+          --secondary-400: #4ade80;
+          --secondary-500: #22c55e;
+          --secondary-600: #16a34a;
+          --secondary-700: #15803d;
+          
+          --neutral-50: #fafafa;
+          --neutral-100: #f5f5f5;
+          --neutral-200: #e5e5e5;
+          --neutral-300: #d4d4d4;
+          --neutral-400: #a3a3a3;
+          --neutral-500: #737373;
+          --neutral-600: #525252;
+          --neutral-700: #404040;
+          --neutral-800: #262626;
+          --neutral-900: #171717;
+          
+          /* Spacing */
+          --space-1: 0.25rem;
+          --space-2: 0.5rem;
+          --space-3: 0.75rem;
+          --space-4: 1rem;
+          --space-6: 1.5rem;
+          --space-8: 2rem;
+          --space-12: 3rem;
+          --space-16: 4rem;
+          --space-20: 5rem;
+          --space-24: 6rem;
+          
+          /* Typography */
+          --text-xs: 0.75rem;
+          --text-sm: 0.875rem;
+          --text-base: 1rem;
+          --text-lg: 1.125rem;
+          --text-xl: 1.25rem;
+          --text-2xl: 1.5rem;
+          --text-3xl: 1.875rem;
+          --text-4xl: 2.25rem;
+          --text-5xl: 3rem;
+          --text-6xl: 3.75rem;
         }
 
         /* ===== BASE STYLES ===== */
@@ -67,18 +73,24 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: linear-gradient(135deg, var(--cream-base) 0%, var(--rose-pastel) 30%, var(--sage-pastel) 100%);
+            font-feature-settings: 'cv01', 'cv03', 'cv04', 'cv11';
+            line-height: 1.5;
+            color: var(--neutral-800);
+            background: linear-gradient(to bottom right, var(--primary-50), var(--secondary-50));
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 var(--space-6);
         }
 
         /* ===== HEADER ===== */
@@ -87,14 +99,16 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
+            padding: var(--space-4) 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(8px);
         }
 
         header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.12);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--neutral-200);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
         }
 
         nav {
@@ -106,49 +120,55 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 16px;
-            font-size: 1.5rem;
+            gap: var(--space-3);
+            font-size: var(--text-xl);
             font-weight: 700;
-            color: var(--text-primary);
+            color: var(--neutral-900);
             text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
         }
 
         .logo-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #FDA4AF 0%, #F472B6 100%);
-            border-radius: 16px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
         .logo-icon i {
             color: white;
-            font-size: 24px;
+            font-size: 18px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: var(--space-8);
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-secondary);
+            color: var(--neutral-600);
             font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 12px;
-            transition: all 0.3s;
+            font-size: var(--text-sm);
+            padding: var(--space-2) var(--space-4);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            position: relative;
         }
 
         .nav-links a:hover {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.6);
-            transform: translateY(-1px);
+            color: var(--primary-600);
+            background: var(--primary-50);
         }
 
         /* ===== HERO SECTION ===== */
@@ -157,184 +177,210 @@
             display: flex;
             align-items: center;
             text-align: center;
-            padding-top: 100px;
+            padding-top: var(--space-24);
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--space-6);
+            background: linear-gradient(135deg, var(--neutral-900), var(--primary-600));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-content p {
+            font-size: var(--text-xl);
+            color: var(--neutral-600);
+            margin-bottom: var(--space-8);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            color: white;
+            padding: var(--space-4) var(--space-8);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: var(--text-base);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            background: white;
+            color: var(--neutral-700);
+            padding: var(--space-4) var(--space-8);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: var(--text-base);
+            transition: all 0.3s ease;
+            border: 1px solid var(--neutral-200);
+        }
+
+        .btn-secondary:hover {
+            background: var(--neutral-50);
+            border-color: var(--neutral-300);
+        }
+
+        /* ===== SECTION STYLES ===== */
+        .section {
+            padding: var(--space-24) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-16);
+        }
+
+        .section-title {
+            font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: var(--space-4);
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: var(--text-xl);
+            color: var(--neutral-600);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ===== FEATURES GRID ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .feature-card {
+            background: white;
+            padding: var(--space-8);
+            border-radius: 20px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--neutral-100);
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
+        .feature-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, var(--rose-pastel) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, var(--sage-pastel) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, var(--lavender-pastel) 0%, transparent 50%);
-            opacity: 0.7;
-            pointer-events: none;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-500), var(--secondary-500));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--rose-accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #FDA4AF 0%, #F472B6 100%);
-            color: white;
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 8px 30px -4px rgba(244, 114, 182, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px -4px rgba(244, 114, 182, 0.4);
-        }
-
-        /* ===== FEATURES SECTION ===== */
-        .features {
-            padding: 120px 0;
-            position: relative;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .features-subtitle {
-            text-align: center;
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 4rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 2.5rem;
-            border-radius: 24px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+        .feature-card:hover::before {
+            transform: scaleX(1);
         }
 
         .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
         .feature-icon {
-            width: 64px;
-            height: 64px;
+            width: 56px;
+            height: 56px;
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
-        }
-
-        .feature-card:nth-child(1) .feature-icon { background: linear-gradient(135deg, #FDA4AF 0%, #F472B6 100%); }
-        .feature-card:nth-child(2) .feature-icon { background: linear-gradient(135deg, #86EFAC 0%, #4ADE80 100%); }
-        .feature-card:nth-child(3) .feature-icon { background: linear-gradient(135deg, #C4B5FD 0%, #A78BFA 100%); }
-        .feature-card:nth-child(4) .feature-icon { background: linear-gradient(135deg, #FED7AA 0%, #FB923C 100%); }
-        .feature-card:nth-child(5) .feature-icon { background: linear-gradient(135deg, #FECACA 0%, #EF4444 100%); }
-        .feature-card:nth-child(6) .feature-icon { background: linear-gradient(135deg, #BFDBFE 0%, #3B82F6 100%); }
-
-        .feature-icon i {
-            font-size: 28px;
+            margin-bottom: var(--space-6);
+            font-size: 24px;
             color: white;
         }
 
+        .feature-card:nth-child(1) .feature-icon { background: linear-gradient(135deg, var(--primary-500), var(--primary-600)); }
+        .feature-card:nth-child(2) .feature-icon { background: linear-gradient(135deg, var(--secondary-500), var(--secondary-600)); }
+        .feature-card:nth-child(3) .feature-icon { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .feature-card:nth-child(4) .feature-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .feature-card:nth-child(5) .feature-icon { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .feature-card:nth-child(6) .feature-icon { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+
         .feature-card h3 {
-            font-size: 1.5rem;
+            font-size: var(--text-xl);
             font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+            color: var(--neutral-900);
+            margin-bottom: var(--space-3);
+            line-height: 1.3;
         }
 
         .feature-card p {
-            color: var(--text-secondary);
+            color: var(--neutral-600);
             line-height: 1.6;
         }
 
         /* ===== ABOUT SECTION ===== */
         .about {
-            padding: 120px 0;
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(20px);
+            background: white;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: var(--space-16);
             align-items: center;
         }
 
-        .about h2 {
-            font-size: 2.5rem;
+        .about-text h2 {
+            font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
             font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
+            color: var(--neutral-900);
+            margin-bottom: var(--space-6);
+            letter-spacing: -0.02em;
         }
 
-        .about p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
+        .about-text p {
+            font-size: var(--text-lg);
+            color: var(--neutral-600);
+            margin-bottom: var(--space-6);
             line-height: 1.7;
         }
 
         .about-image {
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            position: relative;
         }
 
         .about-image img {
@@ -344,146 +390,149 @@
         }
 
         /* ===== TECHNOLOGY SECTION ===== */
-        .technology {
-            padding: 120px 0;
-        }
-
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-6);
         }
 
         .tech-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+            background: white;
+            padding: var(--space-6);
+            border-radius: 16px;
             text-align: center;
-            transition: all 0.3s;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid var(--neutral-100);
         }
 
         .tech-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
         .tech-card i {
             font-size: 2.5rem;
-            color: var(--rose-accent);
-            margin-bottom: 1rem;
+            color: var(--primary-500);
+            margin-bottom: var(--space-4);
         }
 
         .tech-card h3 {
-            font-size: 1.25rem;
+            font-size: var(--text-lg);
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
+            color: var(--neutral-900);
+            margin-bottom: var(--space-2);
         }
 
         .tech-card p {
-            color: var(--text-secondary);
+            color: var(--neutral-600);
+            font-size: var(--text-sm);
         }
 
         /* ===== CONTACT SECTION ===== */
         .contact {
-            padding: 120px 0;
-            background: linear-gradient(135deg, var(--rose-pastel) 0%, var(--lavender-pastel) 100%);
-            text-align: center;
+            background: linear-gradient(135deg, var(--primary-50), var(--secondary-50));
         }
 
-        .contact h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .contact-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-        }
-
-        .contact-info {
+        .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: var(--space-6);
+            margin-bottom: var(--space-12);
         }
 
         .contact-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+            background: white;
+            padding: var(--space-6);
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--neutral-100);
         }
 
         .contact-card i {
             font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--rose-accent);
+            color: var(--primary-500);
+            margin-bottom: var(--space-4);
         }
 
         .contact-card h3 {
-            font-size: 1.25rem;
+            font-size: var(--text-lg);
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
+            color: var(--neutral-900);
+            margin-bottom: var(--space-2);
+        }
+
+        .contact-card p {
+            color: var(--neutral-600);
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background: var(--text-primary);
-            color: white;
+            background: var(--neutral-900);
+            color: var(--neutral-300);
             text-align: center;
-            padding: 3rem 0;
+            padding: var(--space-12) 0;
         }
 
         footer p {
-            opacity: 0.8;
+            margin-bottom: var(--space-2);
+        }
+
+        .footer-highlight {
+            color: var(--primary-400);
+            font-weight: 500;
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .container {
+                padding: 0 var(--space-4);
             }
             
             .nav-links {
                 display: none;
             }
             
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
             .about-content {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: var(--space-12);
             }
 
-            .features h2, .contact h2 {
-                font-size: 2rem;
-            }
-
-            .container {
-                padding: 0 16px;
+            .features-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* ===== SCROLL ANIMATIONS ===== */
+        /* ===== ANIMATIONS ===== */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        .stagger-delay-1 { transition-delay: 0.1s; }
+        .stagger-delay-2 { transition-delay: 0.2s; }
+        .stagger-delay-3 { transition-delay: 0.3s; }
+        .stagger-delay-4 { transition-delay: 0.4s; }
+        .stagger-delay-5 { transition-delay: 0.5s; }
+        .stagger-delay-6 { transition-delay: 0.6s; }
     </style>
 </head>
 <body>
@@ -497,7 +546,6 @@
                 <span>HormonCode</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#about">Über uns</a></li>
                 <li><a href="#technology">Technologie</a></li>
@@ -509,59 +557,67 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content fade-in">
-                <h1>Deine Hormongesundheit, optimiert mit KI</h1>
-                <p>Personalisierte Ernährungs- und Bewegungspläne für Frauen ab 40. Wissenschaftlich fundiert, KI-gestützt, individuell angepasst für deine Hormone.</p>
-                <a href="#contact" class="cta-button">
-                    <i class="fas fa-rocket"></i>
-                    Jetzt starten
-                </a>
+            <div class="hero-content">
+                <h1 class="fade-in">Deine Hormongesundheit, optimiert mit KI</h1>
+                <p class="fade-in stagger-delay-1">Personalisierte Ernährungs- und Bewegungspläne für Frauen ab 40. Wissenschaftlich fundiert, KI-gestützt, individuell angepasst für optimale Hormonbalance.</p>
+                <div class="hero-buttons fade-in stagger-delay-2">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Jetzt starten
+                    </a>
+                    <a href="#features" class="btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Mehr erfahren
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section id="features" class="section">
         <div class="container">
-            <h2 class="fade-in">Warum HormonCode?</h2>
-            <p class="features-subtitle fade-in">Revolutioniere deine Gesundheit mit modernster KI-Technologie</p>
+            <div class="section-header">
+                <h2 class="section-title fade-in">Revolutioniere deine Gesundheit</h2>
+                <p class="section-subtitle fade-in stagger-delay-1">Modernste KI-Technologie trifft auf wissenschaftlich fundierte Hormongesundheit</p>
+            </div>
             <div class="features-grid">
-                <div class="feature-card fade-in">
+                <div class="feature-card fade-in stagger-delay-1">
                     <div class="feature-icon">
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3>KI-gestützte Personalisierung</h3>
                     <p>Unsere fortschrittliche AI analysiert deine individuellen Bedürfnisse und erstellt maßgeschneiderte Pläne für optimale Hormonbalance.</p>
                 </div>
-                <div class="feature-card fade-in">
+                <div class="feature-card fade-in stagger-delay-2">
                     <div class="feature-icon">
                         <i class="fas fa-apple-alt"></i>
                     </div>
                     <h3>Hormonfreundliche Ernährung</h3>
                     <p>Speziell entwickelte Rezepte und Ernährungspläne, die deine Hormone natürlich unterstützen und das Wohlbefinden steigern.</p>
                 </div>
-                <div class="feature-card fade-in">
+                <div class="feature-card fade-in stagger-delay-3">
                     <div class="feature-icon">
                         <i class="fas fa-dumbbell"></i>
                     </div>
                     <h3>Intelligente Bewegungspläne</h3>
-                    <p>Angepasste Workout-Routinen, die deinen Zyklus und Energielevel berücksichtigen für maximale Effektivität.</p>
+                    <p>Angepasste Workout-Routines, die deinen Zyklus und Energielevel berücksichtigen für maximale Effektivität.</p>
                 </div>
-                <div class="feature-card fade-in">
+                <div class="feature-card fade-in stagger-delay-4">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Fortschritts-Tracking</h3>
                     <p>Überwache deine Entwicklung mit detailliertem Tracking und erhalte kontinuierliche Anpassungen deiner Pläne.</p>
                 </div>
-                <div class="feature-card fade-in">
+                <div class="feature-card fade-in stagger-delay-5">
                     <div class="feature-icon">
                         <i class="fas fa-user-md"></i>
                     </div>
                     <h3>Evidenzbasiert</h3>
                     <p>Alle Empfehlungen basieren auf aktueller wissenschaftlicher Forschung zur Hormongesundheit von Frauen 40+.</p>
                 </div>
-                <div class="feature-card fade-in">
+                <div class="feature-card fade-in stagger-delay-6">
                     <div class="feature-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
@@ -573,16 +629,16 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section about">
         <div class="container">
             <div class="about-content">
-                <div class="fade-in">
-                    <h2>Über HormonCode</h2>
+                <div class="about-text fade-in">
+                    <h2>Die Zukunft der Frauengesundheit</h2>
                     <p>HormonCode revolutioniert die Gesundheitsvorsorge für Frauen ab 40 durch den Einsatz modernster KI-Technologie. Wir verstehen die einzigartigen Herausforderungen des Hormonwandels und bieten personalisierte Lösungen.</p>
                     <p>Unser interdisziplinäres Team aus Ernährungswissenschaftlern, Endokrinologen und KI-Experten entwickelt innovative Ansätze für ganzheitliche Hormongesundheit.</p>
                     <p>Mit wissenschaftlich fundierten Methoden und modernster Technologie helfen wir Frauen dabei, ihre beste Gesundheit zu erreichen und sich energiegeladen und ausgeglichen zu fühlen.</p>
                 </div>
-                <div class="about-image fade-in">
+                <div class="about-image fade-in stagger-delay-2">
                     <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gesunde Frau mit ausgeglichenen Hormonen">
                 </div>
             </div>
@@ -590,27 +646,29 @@
     </section>
 
     <!-- Technology Section -->
-    <section id="technology" class="technology">
+    <section id="technology" class="section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2.5rem; font-weight: 700;" class="fade-in">Unsere Technologie</h2>
-            <p style="text-align: center; font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem;" class="fade-in">Powered by modernste AI und Cloud-Technologie</p>
+            <div class="section-header">
+                <h2 class="section-title fade-in">Modernste Technologie</h2>
+                <p class="section-subtitle fade-in stagger-delay-1">Powered by AWS Bedrock und führenden AI-Modellen</p>
+            </div>
             <div class="tech-grid">
-                <div class="tech-card fade-in">
+                <div class="tech-card fade-in stagger-delay-1">
                     <i class="fas fa-robot"></i>
                     <h3>AWS Bedrock AI</h3>
                     <p>Modernste Foundation Models für intelligente Analyse und Personalisierung</p>
                 </div>
-                <div class="tech-card fade-in">
+                <div class="tech-card fade-in stagger-delay-2">
                     <i class="fas fa-database"></i>
                     <h3>Machine Learning</h3>
                     <p>Kontinuierliche Verbesserung durch lernende Algorithmen</p>
                 </div>
-                <div class="tech-card fade-in">
+                <div class="tech-card fade-in stagger-delay-3">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Datensicherheit</h3>
                     <p>Höchste Sicherheitsstandards für den Schutz deiner persönlichen Daten</p>
                 </div>
-                <div class="tech-card fade-in">
+                <div class="tech-card fade-in stagger-delay-4">
                     <i class="fas fa-cloud"></i>
                     <h3>Cloud-Infrastruktur</h3>
                     <p>Skalierbare und zuverlässige Cloud-basierte Architektur</p>
@@ -620,29 +678,31 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="fade-in">Kontaktiere uns</h2>
-            <p class="contact-subtitle fade-in">Bereit für deine Hormongesundheits-Transformation?</p>
-            <div class="contact-info">
-                <div class="contact-card fade-in">
+            <div class="section-header">
+                <h2 class="section-title fade-in">Bereit für deine Transformation?</h2>
+                <p class="section-subtitle fade-in stagger-delay-1">Starte noch heute deine Reise zu optimaler Hormongesundheit</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card fade-in stagger-delay-1">
                     <i class="fas fa-envelope"></i>
                     <h3>E-Mail</h3>
                     <p>info@hormoncode.com</p>
                 </div>
-                <div class="contact-card fade-in">
+                <div class="contact-card fade-in stagger-delay-2">
                     <i class="fas fa-globe"></i>
                     <h3>Website</h3>
                     <p>www.hormoncode.com</p>
                 </div>
-                <div class="contact-card fade-in">
+                <div class="contact-card fade-in stagger-delay-3">
                     <i class="fas fa-rocket"></i>
                     <h3>Innovation</h3>
                     <p>Powered by AI & AWS Bedrock</p>
                 </div>
             </div>
-            <div style="margin-top: 3rem;" class="fade-in">
-                <a href="mailto:info@hormoncode.com" class="cta-button">
+            <div class="fade-in stagger-delay-4" style="text-align: center;">
+                <a href="mailto:info@hormoncode.com" class="btn-primary">
                     <i class="fas fa-paper-plane"></i>
                     Jetzt Kontakt aufnehmen
                 </a>
@@ -653,37 +713,41 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 HormonCode. Alle Rechte vorbehalten. | Powered by AI Technology</p>
-            <p style="margin-top: 0.5rem; opacity: 0.7;">Innovating Women's Health with Artificial Intelligence</p>
+            <p>&copy; 2024 <span class="footer-highlight">HormonCode</span>. Alle Rechte vorbehalten.</p>
+            <p>Innovating Women's Health with Artificial Intelligence</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling
+        // Smooth scrolling with offset for fixed header
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Header background on scroll
+        // Header scroll effect
+        let lastScrollY = window.scrollY;
+        const header = document.getElementById('header');
+
         window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
         });
 
-        // Scroll animations
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -702,8 +766,13 @@
             observer.observe(el);
         });
 
-        // Add visible class to hero content immediately
-        document.querySelector('.hero .fade-in').classList.add('visible');
+        // Add visible class to hero elements immediately
+        document.querySelectorAll('.hero .fade-in').forEach(el => {
+            el.classList.add('visible');
+        });
+
+        // Performance optimization: Passive event listeners
+        window.addEventListener('scroll', () => {}, { passive: true });
     </script>
 </body>
 </html>
