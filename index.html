@@ -1349,64 +1349,6 @@
             });
         });
 
-        // Global functions for cookie modal
-        window.closeCookieModal = function(save) {
-            const modal = document.getElementById('cookieModal');
-            if (modal) {
-                modal.remove();
-            }
-        };
-
-        window.saveCookieSettings = function() {
-            const analyticsChoice = document.getElementById('analyticsChoice').checked;
-            
-            const consent = {
-                hasConsent: true,
-                analytics: analyticsChoice,
-                necessary: true,
-                timestamp: new Date().toISOString()
-            };
-            
-            localStorage.setItem('hormoncode_cookie_consent', JSON.stringify(consent));
-            window.cookieConsent = consent;
-            
-            if (analyticsChoice) {
-                loadGoogleAnalytics();
-            }
-            
-            // Hide banner and modal
-            const cookieBanner = document.getElementById('cookieBanner');
-            if (cookieBanner) {
-                cookieBanner.classList.remove('show');
-            }
-            
-            // Close modal
-            closeCookieModal();
-            
-            console.log('Cookie-Einstellungen gespeichert:', consent);
-            
-            // Show confirmation message
-            const confirmation = document.createElement('div');
-            confirmation.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: #22c55e;
-                color: white;
-                padding: 15px 20px;
-                border-radius: 8px;
-                z-index: 10000;
-                font-weight: 500;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            `;
-            confirmation.textContent = 'Cookie-Einstellungen gespeichert!';
-            document.body.appendChild(confirmation);
-            
-            setTimeout(() => {
-                confirmation.remove();
-            }, 3000);
-        };
-
         // Smooth scrolling with offset for fixed header
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1691,6 +1633,63 @@
 
         // Performance optimization: Passive event listeners
         window.addEventListener('scroll', () => {}, { passive: true });
+        // Global functions for cookie modal (outside DOMContentLoaded)
+        window.closeCookieModal = function(save) {
+            const modal = document.getElementById('cookieModal');
+            if (modal) {
+                modal.remove();
+            }
+        };
+
+        window.saveCookieSettings = function() {
+            const analyticsChoice = document.getElementById('analyticsChoice').checked;
+            
+            const consent = {
+                hasConsent: true,
+                analytics: analyticsChoice,
+                necessary: true,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('hormoncode_cookie_consent', JSON.stringify(consent));
+            window.cookieConsent = consent;
+            
+            if (analyticsChoice) {
+                loadGoogleAnalytics();
+            }
+            
+            // Hide banner and modal
+            const cookieBanner = document.getElementById('cookieBanner');
+            if (cookieBanner) {
+                cookieBanner.classList.remove('show');
+            }
+            
+            // Close modal
+            closeCookieModal();
+            
+            console.log('Cookie-Einstellungen gespeichert:', consent);
+            
+            // Show confirmation message
+            const confirmation = document.createElement('div');
+            confirmation.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #22c55e;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                z-index: 10000;
+                font-weight: 500;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            `;
+            confirmation.textContent = 'Cookie-Einstellungen gespeichert!';
+            document.body.appendChild(confirmation);
+            
+            setTimeout(() => {
+                confirmation.remove();
+            }, 3000);
+        };
     </script>
 </body>
 </html>
