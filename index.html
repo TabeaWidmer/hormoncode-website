@@ -53,49 +53,84 @@
       }
     }
     </script>
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSN865W9KQ"></script>
+    <!-- Google Analytics 4 - DSGVO-konform geladen -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        // Cookie-Banner Consent Management
+        window.cookieConsent = {
+            hasConsent: false,
+            analytics: false
+        };
         
-        gtag('config', 'G-RSN865W9KQ', {
-            // Enhanced measurement
-            send_page_view: true,
-            custom_map: {
-                'custom_parameter_1': 'user_type',
-                'custom_parameter_2': 'signup_source'
+        // Check for existing consent
+        const consent = localStorage.getItem('hormoncode_cookie_consent');
+        if (consent) {
+            const consentData = JSON.parse(consent);
+            window.cookieConsent = consentData;
+            if (consentData.analytics) {
+                loadGoogleAnalytics();
             }
-        });
+        }
         
-        // Custom events for HormonCode
+        function loadGoogleAnalytics() {
+            if (window.cookieConsent.analytics && !window.gtag) {
+                // Load GA script
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-RSN865W9KQ';
+                document.head.appendChild(script);
+                
+                // Initialize GA
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                
+                gtag('config', 'G-RSN865W9KQ', {
+                    send_page_view: true,
+                    anonymize_ip: true,
+                    custom_map: {
+                        'custom_parameter_1': 'user_type',
+                        'custom_parameter_2': 'signup_source'
+                    }
+                });
+                
+                console.log('Google Analytics geladen nach Cookie-Zustimmung');
+            }
+        }
+        
+        // Custom events for HormonCode (only if consent given)
         function trackWaitlistSignup(data) {
-            gtag('event', 'waitlist_signup', {
-                'event_category': 'conversion',
-                'event_label': 'beta_signup',
-                'value': 3.00,
-                'currency': 'CHF',
-                'user_type': data.age || 'unknown',
-                'signup_source': data.source || 'landing_page',
-                'interest': data.interests || 'general'
-            });
+            if (window.cookieConsent.analytics && window.gtag) {
+                gtag('event', 'waitlist_signup', {
+                    'event_category': 'conversion',
+                    'event_label': 'beta_signup',
+                    'value': 3.00,
+                    'currency': 'CHF',
+                    'user_type': data.age || 'unknown',
+                    'signup_source': data.source || 'landing_page',
+                    'interest': data.interests || 'general'
+                });
+            }
         }
         
         function trackFormInteraction(step) {
-            gtag('event', 'form_interaction', {
-                'event_category': 'engagement',
-                'event_label': step,
-                'custom_parameter_1': 'waitlist_form'
-            });
+            if (window.cookieConsent.analytics && window.gtag) {
+                gtag('event', 'form_interaction', {
+                    'event_category': 'engagement',
+                    'event_label': step,
+                    'custom_parameter_1': 'waitlist_form'
+                });
+            }
         }
         
         function trackPageScroll(percentage) {
-            gtag('event', 'scroll', {
-                'event_category': 'engagement',
-                'event_label': 'page_scroll',
-                'value': percentage
-            });
+            if (window.cookieConsent.analytics && window.gtag) {
+                gtag('event', 'scroll', {
+                    'event_category': 'engagement',
+                    'event_label': 'page_scroll',
+                    'value': percentage
+                });
+            }
         }
     </script>
     
@@ -781,6 +816,125 @@
         .stagger-delay-4 { transition-delay: 0.4s; }
         .stagger-delay-5 { transition-delay: 0.5s; }
         .stagger-delay-6 { transition-delay: 0.6s; }
+
+        /* ===== COOKIE BANNER ===== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid var(--neutral-200);
+            box-shadow: 0 -4px 20px -3px rgba(0, 0, 0, 0.15);
+            z-index: 10000;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(16px);
+        }
+
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-banner-content {
+            padding: var(--space-6);
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: var(--space-6);
+            flex-wrap: wrap;
+        }
+
+        .cookie-banner-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .cookie-banner-title {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--neutral-900);
+            margin-bottom: var(--space-2);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .cookie-banner-description {
+            font-size: var(--text-sm);
+            color: var(--neutral-600);
+            line-height: 1.5;
+        }
+
+        .cookie-banner-buttons {
+            display: flex;
+            gap: var(--space-3);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            padding: var(--space-3) var(--space-6);
+            border-radius: 8px;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            border: none;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .cookie-btn-accept {
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            color: white;
+            box-shadow: 0 2px 4px -1px rgba(236, 72, 153, 0.3);
+        }
+
+        .cookie-btn-accept:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px -1px rgba(236, 72, 153, 0.4);
+        }
+
+        .cookie-btn-decline {
+            background: var(--neutral-100);
+            color: var(--neutral-700);
+            border: 1px solid var(--neutral-200);
+        }
+
+        .cookie-btn-decline:hover {
+            background: var(--neutral-200);
+        }
+
+        .cookie-btn-settings {
+            background: transparent;
+            color: var(--primary-600);
+            border: 1px solid var(--primary-200);
+        }
+
+        .cookie-btn-settings:hover {
+            background: var(--primary-50);
+        }
+
+        @media (max-width: 768px) {
+            .cookie-banner-content {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--space-4);
+            }
+            
+            .cookie-banner-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .cookie-btn {
+                flex: 1;
+                min-width: 100px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1035,6 +1189,36 @@
         </div>
     </section>
 
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <div class="cookie-banner-title">
+                    <i class="fas fa-cookie-bite"></i>
+                    Cookies & Datenschutz
+                </div>
+                <div class="cookie-banner-description">
+                    Wir verwenden Cookies und ähnliche Technologien, um unsere Website zu verbessern und dein Nutzererlebnis zu optimieren. 
+                    Mit "Alle akzeptieren" stimmst du der Verwendung von Analytics-Cookies zu. 
+                    Du kannst deine Einstellungen jederzeit anpassen.
+                </div>
+            </div>
+            <div class="cookie-banner-buttons">
+                <button id="acceptAllCookies" class="cookie-btn cookie-btn-accept">
+                    <i class="fas fa-check"></i>
+                    Alle akzeptieren
+                </button>
+                <button id="declineCookies" class="cookie-btn cookie-btn-decline">
+                    Nur notwendige
+                </button>
+                <button id="cookieSettings" class="cookie-btn cookie-btn-settings">
+                    <i class="fas fa-cog"></i>
+                    Einstellungen
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1044,6 +1228,92 @@
     </footer>
 
     <script>
+        // ===== COOKIE BANNER FUNCTIONALITY =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookieBanner = document.getElementById('cookieBanner');
+            const acceptAllBtn = document.getElementById('acceptAllCookies');
+            const declineBtn = document.getElementById('declineCookies');
+            const settingsBtn = document.getElementById('cookieSettings');
+            
+            // Show banner if no consent exists
+            const existingConsent = localStorage.getItem('hormoncode_cookie_consent');
+            if (!existingConsent) {
+                setTimeout(() => {
+                    cookieBanner.classList.add('show');
+                }, 1000); // Show after 1 second
+            }
+            
+            // Accept all cookies
+            acceptAllBtn.addEventListener('click', function() {
+                const consent = {
+                    hasConsent: true,
+                    analytics: true,
+                    necessary: true,
+                    timestamp: new Date().toISOString()
+                };
+                
+                localStorage.setItem('hormoncode_cookie_consent', JSON.stringify(consent));
+                window.cookieConsent = consent;
+                
+                // Load Google Analytics
+                loadGoogleAnalytics();
+                
+                // Hide banner
+                cookieBanner.classList.remove('show');
+                
+                console.log('Cookie-Zustimmung: Alle Cookies akzeptiert');
+            });
+            
+            // Decline cookies (only necessary)
+            declineBtn.addEventListener('click', function() {
+                const consent = {
+                    hasConsent: true,
+                    analytics: false,
+                    necessary: true,
+                    timestamp: new Date().toISOString()
+                };
+                
+                localStorage.setItem('hormoncode_cookie_consent', JSON.stringify(consent));
+                window.cookieConsent = consent;
+                
+                // Hide banner
+                cookieBanner.classList.remove('show');
+                
+                console.log('Cookie-Zustimmung: Nur notwendige Cookies');
+            });
+            
+            // Cookie settings (simplified - same as decline for now)
+            settingsBtn.addEventListener('click', function() {
+                // For now, show alert with options
+                const choice = confirm(
+                    'Cookie-Einstellungen:\n\n' +
+                    'Notwendige Cookies: Immer aktiv (für Grundfunktionen)\n' +
+                    'Analytics-Cookies: Helfen uns die Website zu verbessern\n\n' +
+                    'OK = Analytics erlauben\n' +
+                    'Abbrechen = Nur notwendige Cookies'
+                );
+                
+                const consent = {
+                    hasConsent: true,
+                    analytics: choice,
+                    necessary: true,
+                    timestamp: new Date().toISOString()
+                };
+                
+                localStorage.setItem('hormoncode_cookie_consent', JSON.stringify(consent));
+                window.cookieConsent = consent;
+                
+                if (choice) {
+                    loadGoogleAnalytics();
+                }
+                
+                // Hide banner
+                cookieBanner.classList.remove('show');
+                
+                console.log('Cookie-Einstellungen gespeichert:', consent);
+            });
+        });
+
         // Smooth scrolling with offset for fixed header
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
