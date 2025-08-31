@@ -3,8 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HormonCode - AI-gestützte Hormongesundheit für Frauen 40+</title>
-    <meta name="description" content="HormonCode bietet personalisierte Ernährungs- und Bewegungspläne mit KI-Technologie für Frauen ab 40. Optimiere deine Hormongesundheit natürlich.">
+    <title>HormonCode - KI-gestützte Hormonbalance für Frauen 40+ | Personalisierte Ernährung & Gesundheit</title>
+    <meta name="description" content="Optimiere deine Hormongesundheit mit personalisierten KI-Empfehlungen. Maßgeschneiderte Ernährungspläne für Frauen 40+. Beta-Zugang nur 3 CHF statt 15 CHF/Monat.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Hormongesundheit, Frauen 40+, Wechseljahre, Menopause, personalisierte Ernährung, KI Gesundheit, Hormonbalance, Stoffwechsel, Gewichtsmanagement, Schweiz">
+    <meta name="author" content="HormonCode">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="de">
+    <meta name="geo.region" content="CH">
+    <meta name="geo.country" content="Switzerland">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hormoncode.com/">
+    <meta property="og:title" content="HormonCode - KI-gestützte Hormonbalance für Frauen 40+">
+    <meta property="og:description" content="Optimiere deine Hormongesundheit mit personalisierten KI-Empfehlungen. Beta-Zugang nur 3 CHF statt 15 CHF/Monat.">
+    <meta property="og:image" content="https://hormoncode.com/my-woman-image.jpg">
+    <meta property="og:locale" content="de_CH">
+    <meta property="og:site_name" content="HormonCode">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hormoncode.com/">
+    <meta property="twitter:title" content="HormonCode - KI-gestützte Hormonbalance für Frauen 40+">
+    <meta property="twitter:description" content="Optimiere deine Hormongesundheit mit personalisierten KI-Empfehlungen. Beta-Zugang nur 3 CHF statt 15 CHF/Monat.">
+    <meta property="twitter:image" content="https://hormoncode.com/my-woman-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hormoncode.com/">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "HormonCode",
+      "url": "https://hormoncode.com",
+      "logo": "https://hormoncode.com/logo.png",
+      "description": "KI-gestützte Hormongesundheit für Frauen 40+",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CH"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@hormoncode.com",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSN865W9KQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-RSN865W9KQ', {
+            // Enhanced measurement
+            send_page_view: true,
+            custom_map: {
+                'custom_parameter_1': 'user_type',
+                'custom_parameter_2': 'signup_source'
+            }
+        });
+        
+        // Custom events for HormonCode
+        function trackWaitlistSignup(data) {
+            gtag('event', 'waitlist_signup', {
+                'event_category': 'conversion',
+                'event_label': 'beta_signup',
+                'value': 3.00,
+                'currency': 'CHF',
+                'user_type': data.age || 'unknown',
+                'signup_source': data.source || 'landing_page',
+                'interest': data.interests || 'general'
+            });
+        }
+        
+        function trackFormInteraction(step) {
+            gtag('event', 'form_interaction', {
+                'event_category': 'engagement',
+                'event_label': step,
+                'custom_parameter_1': 'waitlist_form'
+            });
+        }
+        
+        function trackPageScroll(percentage) {
+            gtag('event', 'scroll', {
+                'event_category': 'engagement',
+                'event_label': 'page_scroll',
+                'value': percentage
+            });
+        }
+    </script>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -429,42 +523,196 @@
             font-size: var(--text-sm);
         }
 
-        /* ===== CONTACT SECTION ===== */
-        .contact {
+        /* ===== WAITLIST SECTION ===== */
+        .waitlist {
             background: linear-gradient(135deg, var(--primary-50), var(--secondary-50));
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-6);
-            margin-bottom: var(--space-12);
+        .waitlist::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(236,72,153,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            pointer-events: none;
         }
 
-        .contact-card {
-            background: white;
-            padding: var(--space-6);
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            border: 1px solid var(--neutral-100);
-        }
-
-        .contact-card i {
-            font-size: 2rem;
-            color: var(--primary-500);
-            margin-bottom: var(--space-4);
-        }
-
-        .contact-card h3 {
-            font-size: var(--text-lg);
+        .waitlist-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            color: white;
+            padding: var(--space-2) var(--space-4);
+            border-radius: 9999px;
+            font-size: var(--text-sm);
             font-weight: 600;
-            color: var(--neutral-900);
+            margin-bottom: var(--space-6);
+            box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.3);
+        }
+
+        .waitlist-form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .waitlist-form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: var(--space-8);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-6);
+        }
+
+        .form-label {
+            display: block;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--neutral-700);
             margin-bottom: var(--space-2);
         }
 
-        .contact-card p {
+        .form-input {
+            width: 100%;
+            padding: var(--space-4);
+            border: 2px solid var(--neutral-200);
+            border-radius: 12px;
+            font-size: var(--text-base);
+            transition: all 0.3s ease;
+            background: white;
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-500);
+            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+        }
+
+        .form-checkbox-group {
+            display: flex;
+            align-items: start;
+            gap: var(--space-3);
+            margin-bottom: var(--space-6);
+        }
+
+        .form-checkbox {
+            margin-top: var(--space-1);
+            accent-color: var(--primary-500);
+        }
+
+        .form-checkbox-label {
+            font-size: var(--text-sm);
             color: var(--neutral-600);
+            line-height: 1.5;
+        }
+
+        .waitlist-button {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            color: white;
+            border: none;
+            padding: var(--space-4) var(--space-6);
+            border-radius: 12px;
+            font-size: var(--text-lg);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            font-family: inherit;
+        }
+
+        .waitlist-button:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.4);
+        }
+
+        .waitlist-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .waitlist-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-8);
+            margin-top: var(--space-12);
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: var(--neutral-700);
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            display: block;
+            background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: var(--text-sm);
+            color: var(--neutral-600);
+            font-weight: 500;
+        }
+
+        .success-message, .error-message {
+            padding: var(--space-4);
+            border-radius: 12px;
+            margin-bottom: var(--space-4);
+            display: none;
+            align-items: center;
+            gap: var(--space-2);
+            font-weight: 500;
+        }
+
+        .success-message {
+            background: var(--secondary-500);
+            color: white;
+        }
+
+        .error-message {
+            background: #ef4444;
+            color: white;
+        }
+
+        .success-message.show,
+        .error-message.show {
+            display: flex;
+        }
+
+        /* Custom interest field animation */
+        #customInterestGroup {
+            transition: all 0.3s ease;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        #customInterestGroup.show {
+            opacity: 1;
+            max-height: 100px;
+            margin-bottom: var(--space-6);
         }
 
         /* ===== FOOTER ===== */
@@ -549,7 +797,7 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#about">Über uns</a></li>
                 <li><a href="#technology">Technologie</a></li>
-                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#waitlist">Beta-Zugang</a></li>
             </ul>
         </nav>
     </header>
@@ -677,35 +925,112 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="section waitlist">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title fade-in">Bereit für deine Transformation?</h2>
-                <p class="section-subtitle fade-in stagger-delay-1">Starte noch heute deine Reise zu optimaler Hormongesundheit</p>
+                <div class="waitlist-badge fade-in">
+                    <i class="fas fa-star"></i>
+                    Beta-Zugang: 80% Ersparnis
+                </div>
+                <h2 class="section-title fade-in">Werde eine der ersten Nutzerinnen</h2>
+                <p class="section-subtitle fade-in stagger-delay-1">Sichere dir frühen Zugang zu HormonCode und transformiere deine Gesundheit mit personalisierten KI-Empfehlungen. <strong>Beta-Preis: nur 3 CHF statt 15 CHF pro Monat</strong> - spare 80%!</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-card fade-in stagger-delay-1">
-                    <i class="fas fa-envelope"></i>
-                    <h3>E-Mail</h3>
-                    <p>hello@hormoncode.com</p>
+            
+            <div class="waitlist-form-container fade-in stagger-delay-2">
+                <form id="waitlistForm" class="waitlist-form">
+                    <div id="successMessage" class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        Fantastisch! Du bist jetzt auf der Warteliste. Wir informieren dich, sobald HormonCode verfügbar ist.
+                    </div>
+                    <div id="errorMessage" class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span id="errorText">Etwas ist schiefgelaufen. Bitte versuche es erneut.</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-Mail-Adresse *</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="deine@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="firstName" class="form-label">Vorname *</label>
+                        <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Anna" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age" class="form-label">Alter (optional)</label>
+                        <select id="age" name="age" class="form-input">
+                            <option value="">Wähle dein Alter</option>
+                            <option value="35-39">35-39 Jahre</option>
+                            <option value="40-44">40-44 Jahre</option>
+                            <option value="45-49">45-49 Jahre</option>
+                            <option value="50-54">50-54 Jahre</option>
+                            <option value="55-59">55-59 Jahre</option>
+                            <option value="60+">60+ Jahre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interests" class="form-label">Hauptinteresse (optional)</label>
+                        <select id="interests" name="interests" class="form-input">
+                            <option value="">Was interessiert dich am meisten?</option>
+                            <option value="hormone-balance">Hormonbalance</option>
+                            <option value="weight-management">Gewichtsmanagement</option>
+                            <option value="energy-boost">Mehr Energie</option>
+                            <option value="sleep-improvement">Besserer Schlaf</option>
+                            <option value="mood-support">Stimmungsunterstützung</option>
+                            <option value="nutrition-guidance">Ernährungsberatung</option>
+                            <option value="skin-health">Hautgesundheit</option>
+                            <option value="fitness-support">Fitness & Bewegung</option>
+                            <option value="stress-management">Stressmanagement</option>
+                            <option value="other">Sonstiges (bitte angeben)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="customInterestGroup" style="display: none;">
+                        <label for="customInterest" class="form-label">Dein Hauptinteresse</label>
+                        <input type="text" id="customInterest" name="customInterest" class="form-input" placeholder="z.B. Menopause-Unterstützung, Verdauungsgesundheit...">
+                    </div>
+                    
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" class="form-checkbox" checked>
+                        <label for="newsletter" class="form-checkbox-label">
+                            Ich möchte Updates über HormonCode und wertvolle Gesundheitstipps per E-Mail erhalten. (Du kannst dich jederzeit abmelden)
+                        </label>
+                    </div>
+                    
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" id="privacy" name="privacy" class="form-checkbox" required>
+                        <label for="privacy" class="form-checkbox-label">
+                            Ich stimme der <a href="#privacy" style="color: var(--primary-600); text-decoration: underline;">Datenschutzerklärung</a> zu und erlaube die Speicherung meiner Daten für die Warteliste. *
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="waitlist-button" id="submitBtn">
+                        <i class="fas fa-heart"></i>
+                        Auf die Warteliste setzen
+                    </button>
+                </form>
+            </div>
+            
+            <div class="waitlist-stats fade-in stagger-delay-3">
+                <div class="stat-item">
+                    <span class="stat-number" id="waitlistCount">247</span>
+                    <span class="stat-label">Frauen warten bereits</span>
                 </div>
-                <div class="contact-card fade-in stagger-delay-2">
-                    <i class="fas fa-globe"></i>
-                    <h3>Website</h3>
-                    <p>www.hormoncode.com</p>
+                <div class="stat-item">
+                    <span class="stat-number">Oktober 2025</span>
+                    <span class="stat-label">Beta-Launch</span>
                 </div>
-                <div class="contact-card fade-in stagger-delay-3">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Innovation</h3>
-                    <p>Powered by AI & AWS Bedrock</p>
+                <div class="stat-item">
+                    <span class="stat-number">3 CHF</span>
+                    <span class="stat-label">statt 15 CHF/Monat</span>
                 </div>
             </div>
-            <div class="fade-in stagger-delay-4" style="text-align: center;">
-                <a href="mailto:hello@hormoncode.com" class="btn-primary">
-                    <i class="fas fa-paper-plane"></i>
-                    Jetzt Kontakt aufnehmen
-                </a>
+            
+            <div class="contact-info fade-in stagger-delay-4" style="text-align: center; margin-top: var(--space-12); color: var(--neutral-600);">
+                <p>Fragen? Schreib uns gerne an <a href="mailto:hello@hormoncode.com" style="color: var(--primary-600);">hello@hormoncode.com</a></p>
             </div>
         </div>
     </section>
@@ -713,7 +1038,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 <span class="footer-highlight">HormonCode</span>. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 <span class="footer-highlight">HormonCode</span>. Alle Rechte vorbehalten.</p>
             <p>Innovating Women's Health with Artificial Intelligence</p>
         </div>
     </footer>
@@ -745,6 +1070,206 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+
+        // Show/hide custom interest field
+        document.getElementById('interests').addEventListener('change', function() {
+            const customInterestGroup = document.getElementById('customInterestGroup');
+            const customInterestInput = document.getElementById('customInterest');
+            
+            // Track interest selection
+            if (typeof trackFormInteraction !== 'undefined') {
+                trackFormInteraction('interest_selected_' + this.value);
+            }
+            
+            if (this.value === 'other') {
+                customInterestGroup.style.display = 'block';
+                customInterestInput.required = true;
+                // Trigger animation
+                setTimeout(() => {
+                    customInterestGroup.classList.add('show');
+                    customInterestInput.focus();
+                }, 10);
+                // Smooth scroll to make the field visible
+                setTimeout(() => {
+                    customInterestInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 300);
+            } else {
+                customInterestGroup.classList.remove('show');
+                customInterestInput.required = false;
+                customInterestInput.value = '';
+                // Hide after animation
+                setTimeout(() => {
+                    if (!customInterestGroup.classList.contains('show')) {
+                        customInterestGroup.style.display = 'none';
+                    }
+                }, 300);
+            }
+        });
+
+        // Waitlist form handling
+        document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+            
+            // Hide previous messages
+            successMessage.classList.remove('show');
+            errorMessage.classList.remove('show');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wird gespeichert...';
+            
+            // Get form data
+            const formData = new FormData(this);
+            const selectedInterest = formData.get('interests');
+            const customInterest = formData.get('customInterest');
+            
+            // Use custom interest if "other" is selected and custom field is filled
+            const finalInterest = selectedInterest === 'other' && customInterest 
+                ? customInterest.trim() 
+                : selectedInterest;
+            
+            const data = {
+                email: formData.get('email'),
+                firstName: formData.get('firstName'),
+                age: formData.get('age'),
+                interests: finalInterest,
+                newsletter: formData.get('newsletter') === 'on',
+                timestamp: new Date().toISOString(),
+                source: 'landing-page'
+            };
+            
+            try {
+                // Send to backend API
+                const response = await fetch('/api/waitlist', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    // Show success message
+                    successMessage.classList.add('show');
+                    
+                    // Update waitlist counter with actual position
+                    const counter = document.getElementById('waitlistCount');
+                    if (result.data && result.data.position) {
+                        counter.textContent = result.data.position;
+                    } else {
+                        const currentCount = parseInt(counter.textContent);
+                        counter.textContent = currentCount + 1;
+                    }
+                    
+                    // Reset form
+                    this.reset();
+                    
+                                    // Track successful signup
+                console.log('Waitlist signup successful:', result.data);
+                
+                // Google Analytics tracking
+                if (typeof trackWaitlistSignup !== 'undefined') {
+                    trackWaitlistSignup({
+                        age: data.age,
+                        interests: data.interests,
+                        source: data.source,
+                        position: result.data.position
+                    });
+                }
+                    
+                } else {
+                    // Handle API errors
+                    if (result.code === 'EMAIL_EXISTS') {
+                        errorText.textContent = `Diese E-Mail-Adresse ist bereits registriert! Du bist bereits auf der Warteliste (Position: ${result.existingEntry ? 'wird geladen...' : 'unbekannt'}).`;
+                    } else if (result.code === 'INVALID_EMAIL') {
+                        errorText.textContent = 'Bitte gib eine gültige E-Mail-Adresse ein.';
+                    } else {
+                        errorText.textContent = result.error || 'Ein Fehler ist aufgetreten. Bitte versuche es erneut.';
+                    }
+                    errorMessage.classList.add('show');
+                }
+                
+            } catch (error) {
+                console.error('Waitlist signup error:', error);
+                
+                // Fallback for network errors
+                if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                    // Fallback: Store locally and show success (for development)
+                    const savedData = localStorage.getItem('hormoncode_waitlist') || '[]';
+                    const waitlist = JSON.parse(savedData);
+                    waitlist.push(data);
+                    localStorage.setItem('hormoncode_waitlist', JSON.stringify(waitlist));
+                    
+                    successMessage.classList.add('show');
+                    const counter = document.getElementById('waitlistCount');
+                    const currentCount = parseInt(counter.textContent);
+                    counter.textContent = currentCount + 1;
+                    this.reset();
+                    
+                    console.log('Waitlist stored locally (fallback):', data);
+                } else {
+                    errorText.textContent = 'Entschuldigung, etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib uns direkt an hello@hormoncode.com';
+                    errorMessage.classList.add('show');
+                }
+            } finally {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-heart"></i> Auf die Warteliste setzen';
+            }
+        });
+
+        // Animate waitlist counter on scroll
+        const animateCounterOnScroll = () => {
+            const counter = document.getElementById('waitlistCount');
+            const rect = counter.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible && !counter.classList.contains('animated')) {
+                counter.classList.add('animated');
+                const finalValue = parseInt(counter.textContent);
+                let currentValue = 0;
+                const increment = finalValue / 30; // Animate over 30 frames
+                
+                const animateNumber = () => {
+                    currentValue += increment;
+                    if (currentValue < finalValue) {
+                        counter.textContent = Math.floor(currentValue);
+                        requestAnimationFrame(animateNumber);
+                    } else {
+                        counter.textContent = finalValue;
+                    }
+                };
+                
+                animateNumber();
+            }
+        };
+
+        window.addEventListener('scroll', animateCounterOnScroll);
+        window.addEventListener('load', animateCounterOnScroll);
+
+        // Scroll tracking for analytics
+        let scrollTracked = {};
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            
+            // Track scroll milestones
+            const milestones = [25, 50, 75, 90];
+            milestones.forEach(milestone => {
+                if (scrollPercent >= milestone && !scrollTracked[milestone]) {
+                    scrollTracked[milestone] = true;
+                    if (typeof trackPageScroll !== 'undefined') {
+                        trackPageScroll(milestone);
+                    }
+                }
+            });
         });
 
         // Intersection Observer for animations
