@@ -8,13 +8,18 @@
     "dev": "nodemon waitlist-backend.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "vercel": "^46.1.1"
   },
-  "keywords": ["waitlist", "landing-page", "hormoncode"],
+  "keywords": [
+    "waitlist",
+    "landing-page",
+    "hormoncode"
+  ],
   "author": "HormonCode Team",
   "license": "MIT"
 }
