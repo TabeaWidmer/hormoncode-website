@@ -558,6 +558,87 @@
             font-size: var(--text-sm);
         }
 
+        /* ===== TESTIMONIAL SECTION ===== */
+        .testimonial {
+            padding: 80px 0;
+            background: white;
+            color: var(--text-dark);
+            text-align: center;
+            border-top: 1px solid var(--neutral-200);
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-quote {
+            margin-bottom: var(--space-8);
+        }
+
+        .testimonial-quote i {
+            color: var(--primary-color);
+            opacity: 0.6;
+            font-size: 2rem;
+            margin-bottom: var(--space-4);
+        }
+
+        .testimonial-quote blockquote {
+            color: var(--text-dark);
+            font-size: var(--text-xl);
+            font-style: italic;
+            font-weight: 500;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .testimonial-author {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-6);
+            flex-wrap: wrap;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: var(--text-lg);
+        }
+
+        .author-title {
+            color: var(--neutral-600);
+            font-size: var(--text-sm);
+            margin-top: var(--space-1);
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: var(--space-1);
+        }
+
+        .testimonial-rating i {
+            color: #fbbf24;
+            font-size: var(--text-lg);
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-author {
+                flex-direction: column;
+                gap: var(--space-4);
+            }
+            
+            .author-info {
+                text-align: center;
+            }
+        }
+
         /* ===== WAITLIST SECTION ===== */
         .waitlist {
             background: linear-gradient(135deg, var(--primary-50), var(--secondary-50));
@@ -1073,6 +1154,29 @@
                     <i class="fas fa-cloud"></i>
                     <h3>Cloud-Infrastruktur</h3>
                     <p>Skalierbare und zuverlässige Cloud-basierte Architektur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content fade-in">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <blockquote>
+                        "Seit ich HormonCode nutze, fühle ich mich endlich wieder wie ich selbst. Die personalisierten Empfehlungen haben meine Energie zurückgebracht und meine Wechseljahresbeschwerden deutlich gelindert. Das Beste: Alles in einer App - mein Gesundheits-Tracking, Rezepte, Bewegung und sogar ein AI-Coach, der mich versteht!"
+                    </blockquote>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <div class="author-name">Claudia M., 47 Jahre</div>
+                        <div class="author-title">Beta-Testerin seit 3 Monaten</div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                 </div>
             </div>
         </div>
