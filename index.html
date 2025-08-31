@@ -3,22 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HormonCode - KI-gestützte Hormonbalance für Frauen 40+ | Personalisierte Ernährung & Gesundheit</title>
-    <meta name="description" content="Optimiere deine Hormongesundheit mit personalisierten KI-Empfehlungen. Maßgeschneiderte Ernährungspläne für Frauen 40+. Beta-Zugang nur 3 CHF statt 15 CHF/Monat.">
+    <title>HormonCode 40+ | Endlich wieder in Balance - KI-gestützte Hormongesundheit für Frauen ab 40</title>
+    <meta name="description" content="🎯 Endlich wieder in Balance! Personalisierte Hormongesundheit für Frauen 40+. KI-gestützte Ernährungs- & Bewegungspläne. ⚡ Beta-Zugang nur 3 CHF statt 15 CHF! Jetzt starten."
     
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="Hormongesundheit, Frauen 40+, Wechseljahre, Menopause, personalisierte Ernährung, KI Gesundheit, Hormonbalance, Stoffwechsel, Gewichtsmanagement, Schweiz">
+    <meta name="keywords" content="Hormongesundheit Frauen 40+, endlich wieder in balance, Wechseljahre hilfe, Menopause app, hormonbalance ernährung, KI gesundheitscoach, personalisierte ernährungspläne, gewichtsmanagement 40+, energie steigern, hormonelle balance, schweiz deutschland österreich, beta zugang 3 chf">
     <meta name="author" content="HormonCode">
     <meta name="robots" content="index, follow">
     <meta name="language" content="de">
     <meta name="geo.region" content="CH">
     <meta name="geo.country" content="Switzerland">
     
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="theme-color" content="#E91E63">
+    <meta name="msapplication-TileColor" content="#E91E63">
+    <meta name="application-name" content="HormonCode 40+">
+    <meta name="apple-mobile-web-app-title" content="HormonCode 40+">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Additional targeting keywords -->
+    <meta name="subject" content="Hormongesundheit für Frauen ab 40">
+    <meta name="audience" content="Frauen ab 40, Wechseljahre, Menopause">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="7 days">
+    <meta name="expires" content="never">
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hormoncode.com/">
-    <meta property="og:title" content="HormonCode - KI-gestützte Hormonbalance für Frauen 40+">
-    <meta property="og:description" content="Optimiere deine Hormongesundheit mit personalisierten KI-Empfehlungen. Beta-Zugang nur 3 CHF statt 15 CHF/Monat.">
+    <meta property="og:title" content="🎯 Endlich wieder in Balance! HormonCode 40+ für Frauen ab 40">
+    <meta property="og:description" content="Personalisierte Hormongesundheit mit KI. Ernährungs- & Bewegungspläne für optimale Balance. ⚡ Beta-Zugang nur 3 CHF statt 15 CHF!"
     <meta property="og:image" content="https://hormoncode.com/my-woman-image.jpg">
     <meta property="og:locale" content="de_CH">
     <meta property="og:site_name" content="HormonCode">
@@ -26,8 +43,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hormoncode.com/">
-    <meta property="twitter:title" content="HormonCode - KI-gestützte Hormonbalance für Frauen 40+">
-    <meta property="twitter:description" content="Optimiere deine Hormongesundheit mit personalisierten KI-Empfehlungen. Beta-Zugang nur 3 CHF statt 15 CHF/Monat.">
+    <meta property="twitter:title" content="🎯 Endlich wieder in Balance! HormonCode 40+ für Frauen ab 40">
+    <meta property="twitter:description" content="Personalisierte Hormongesundheit mit KI. Ernährungs- & Bewegungspläne für optimale Balance. ⚡ Beta-Zugang nur 3 CHF statt 15 CHF!"
     <meta property="twitter:image" content="https://hormoncode.com/my-woman-image.jpg">
     
     <!-- Canonical URL -->
@@ -204,6 +221,11 @@
 
         html {
             scroll-behavior: smooth;
+        }
+        
+        /* Smooth scrolling with fixed header offset */
+        section[id] {
+            scroll-margin-top: 120px;
         }
 
         body {
@@ -556,6 +578,93 @@
         .tech-card p {
             color: var(--neutral-600);
             font-size: var(--text-sm);
+        }
+
+        /* ===== TESTIMONIAL SECTION ===== */
+        .testimonial {
+            padding: 80px 0;
+            background: white;
+            color: var(--text-dark);
+            text-align: center;
+            border-top: 1px solid var(--neutral-200);
+            border-bottom: 1px solid var(--neutral-200);
+        }
+        
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-quote {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .testimonial-quote i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.6;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-quote blockquote {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            font-style: italic;
+            margin: 0;
+            padding: 0;
+            border: none;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .author-info {
+            text-align: left;
+        }
+        
+        .author-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+        
+        .author-title {
+            font-size: 0.9rem;
+            color: var(--neutral-600);
+        }
+        
+        .testimonial-rating {
+            display: flex;
+            gap: 0.25rem;
+        }
+        
+        .testimonial-rating i {
+            color: #FFD700;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .testimonial-quote blockquote {
+                font-size: 1.2rem;
+            }
+            
+            .testimonial-author {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .author-info {
+                text-align: center;
+            }
         }
 
         /* ===== WAITLIST SECTION ===== */
@@ -960,10 +1069,10 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="fade-in">Deine Hormongesundheit,<br>optimiert mit KI</h1>
-                <p class="fade-in stagger-delay-1">Personalisierte Ernährungs- und Bewegungspläne für Frauen ab 40. Wissenschaftlich fundiert, KI-gestützt, individuell angepasst für optimale Hormonbalance.</p>
+                <h1 class="fade-in">Endlich wieder in Balance:<br>Dein Weg zu hormoneller Gesundheit</h1>
+                <p class="fade-in stagger-delay-1">Die erste AI-powered App, die Ernährung, Bewegung, Gesundheits-Tracking, Hormon-Coach und Wissensdatenbank in einer App vereint. Wissenschaftlich fundiert, individuell personalisiert für Frauen ab 40.</p>
                 <div class="hero-buttons fade-in stagger-delay-2">
-                    <a href="#contact" class="btn-primary">
+                    <a href="#waitlist" class="btn-primary">
                         <i class="fas fa-rocket"></i>
                         Jetzt starten
                     </a>
@@ -1037,7 +1146,7 @@
                 <div class="about-text fade-in">
                     <h2>Die Zukunft der Frauengesundheit</h2>
                     <p>HormonCode revolutioniert die Gesundheitsvorsorge für Frauen ab 40 durch den Einsatz modernster KI-Technologie. Wir verstehen die einzigartigen Herausforderungen des Hormonwandels und bieten personalisierte Lösungen.</p>
-                    <p>Unser interdisziplinäres Team aus Ernährungswissenschaftlern, Endokrinologen und KI-Experten entwickelt innovative Ansätze für ganzheitliche Hormongesundheit.</p>
+                    <p><strong>🇨🇭 Made in Switzerland:</strong> Entwickelt nach höchsten Schweizer Qualitäts- und Datenschutzstandards. Unser interdisziplinäres Team aus Ernährungswissenschaftlern, Endokrinologen und KI-Experten vereint Schweizer Präzision mit innovativen Ansätzen für ganzheitliche Hormongesundheit.</p>
                     <p>Mit wissenschaftlich fundierten Methoden und modernster Technologie helfen wir Frauen dabei, ihre beste Gesundheit zu erreichen und sich energiegeladen und ausgeglichen zu fühlen.</p>
                 </div>
                 <div class="about-image fade-in stagger-delay-2">
@@ -1067,13 +1176,40 @@
                 </div>
                 <div class="tech-card fade-in stagger-delay-3">
                     <i class="fas fa-shield-alt"></i>
-                    <h3>Datensicherheit</h3>
-                    <p>Höchste Sicherheitsstandards für den Schutz deiner persönlichen Daten</p>
+                    <h3>Swiss Privacy & Security</h3>
+                    <p>🇨🇭 Schweizer Datenschutzstandards & DSGVO-Konformität. Deine sensiblen Gesundheitsdaten bleiben sicher in der Schweiz.</p>
                 </div>
                 <div class="tech-card fade-in stagger-delay-4">
                     <i class="fas fa-cloud"></i>
                     <h3>Cloud-Infrastruktur</h3>
                     <p>Skalierbare und zuverlässige Cloud-basierte Architektur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content fade-in">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <blockquote>
+                        "Seit ich HormonCode nutze, fühle ich mich endlich wieder wie ich selbst. Die personalisierten Empfehlungen haben meine Energie zurückgebracht und meine Wechseljahresbeschwerden deutlich gelindert. Das Beste: Alles in einer App - mein Gesundheits-Tracking, Rezepte, Bewegung und sogar ein AI-Coach, der mich versteht!"
+                    </blockquote>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <div class="author-name">Claudia M., 47 Jahre</div>
+                        <div class="author-title">Beta-Testerin seit 3 Monaten</div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1223,13 +1359,32 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 <span class="footer-highlight">HormonCode</span>. Alle Rechte vorbehalten.</p>
-            <p>Innovating Women's Health with Artificial Intelligence</p>
+            <p>🇨🇭 Made in Switzerland | Innovating Women's Health with Artificial Intelligence</p>
         </div>
     </footer>
 
     <script>
         // ===== COOKIE BANNER FUNCTIONALITY =====
         document.addEventListener('DOMContentLoaded', function() {
+            // ===== SMOOTH SCROLL FUNCTIONALITY =====
+            const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+            
+            smoothScrollLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // ===== COOKIE BANNER FUNCTIONALITY =====
             const cookieBanner = document.getElementById('cookieBanner');
             const acceptAllBtn = document.getElementById('acceptAllCookies');
             const declineBtn = document.getElementById('declineCookies');

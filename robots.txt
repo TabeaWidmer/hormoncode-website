@@ -1,19 +1,27 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap
 Sitemap: https://hormoncode.com/sitemap.xml
 
-# Specific crawl delays for different bots
-User-agent: Googlebot
+# Crawl delay
 Crawl-delay: 1
 
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
 User-agent: Bingbot
-Crawl-delay: 2
+Allow: /
 
-# Block any unwanted crawlers
-User-agent: SemrushBot
-Disallow: /
+User-agent: Slurp
+Allow: /
 
-User-agent: AhrefsBot
-Disallow: /
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
