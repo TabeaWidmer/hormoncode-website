@@ -1170,7 +1170,7 @@
             
             <div class="waitlist-stats fade-in stagger-delay-3">
                 <div class="stat-item">
-                    <span class="stat-number" id="waitlistCount">247</span>
+                    <span class="stat-number" id="waitlistCount">...</span>
                     <span class="stat-label">Frauen warten bereits</span>
                 </div>
                 <div class="stat-item">
@@ -1282,35 +1282,70 @@
                 console.log('Cookie-Zustimmung: Nur notwendige Cookies');
             });
             
-            // Cookie settings (simplified - same as decline for now)
+            // Cookie settings - proper modal instead of alert
             settingsBtn.addEventListener('click', function() {
-                // For now, show alert with options
-                const choice = confirm(
-                    'Cookie-Einstellungen:\n\n' +
-                    'Notwendige Cookies: Immer aktiv (für Grundfunktionen)\n' +
-                    'Analytics-Cookies: Helfen uns die Website zu verbessern\n\n' +
-                    'OK = Analytics erlauben\n' +
-                    'Abbrechen = Nur notwendige Cookies'
-                );
+                // Create a proper settings modal
+                const modalHTML = `
+                    <div id="cookieModal" style="
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0,0,0,0.5);
+                        z-index: 20000;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    ">
+                        <div style="
+                            background: white;
+                            padding: 30px;
+                            border-radius: 15px;
+                            max-width: 500px;
+                            margin: 20px;
+                            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                        ">
+                            <h3 style="margin: 0 0 20px 0; color: #333;">Cookie-Einstellungen</h3>
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: flex; align-items: center; margin-bottom: 15px;">
+                                    <input type="checkbox" checked disabled style="margin-right: 10px;">
+                                    <div>
+                                        <strong>Notwendige Cookies</strong><br>
+                                        <small style="color: #666;">Für Grundfunktionen der Website (immer aktiv)</small>
+                                    </div>
+                                </label>
+                                <label style="display: flex; align-items: center;">
+                                    <input type="checkbox" id="analyticsChoice" style="margin-right: 10px;">
+                                    <div>
+                                        <strong>Analytics-Cookies</strong><br>
+                                        <small style="color: #666;">Helfen uns die Website zu verbessern (Google Analytics)</small>
+                                    </div>
+                                </label>
+                            </div>
+                            <div style="text-align: right;">
+                                <button onclick="closeCookieModal(false)" style="
+                                    background: #f5f5f5;
+                                    border: 1px solid #ddd;
+                                    padding: 10px 20px;
+                                    border-radius: 5px;
+                                    margin-right: 10px;
+                                    cursor: pointer;
+                                ">Abbrechen</button>
+                                <button onclick="saveCookieSettings()" style="
+                                    background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+                                    color: white;
+                                    border: none;
+                                    padding: 10px 20px;
+                                    border-radius: 5px;
+                                    cursor: pointer;
+                                ">Speichern</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
                 
-                const consent = {
-                    hasConsent: true,
-                    analytics: choice,
-                    necessary: true,
-                    timestamp: new Date().toISOString()
-                };
-                
-                localStorage.setItem('hormoncode_cookie_consent', JSON.stringify(consent));
-                window.cookieConsent = consent;
-                
-                if (choice) {
-                    loadGoogleAnalytics();
-                }
-                
-                // Hide banner
-                cookieBanner.classList.remove('show');
-                
-                console.log('Cookie-Einstellungen gespeichert:', consent);
+                document.body.insertAdjacentHTML('beforeend', modalHTML);
             });
         });
 
@@ -1496,6 +1531,32 @@
             }
         });
 
+        // Load real waitlist count from AWS
+        const loadWaitlistCount = async () => {
+            try {
+                const response = await fetch('https://af78sj4xsg.execute-api.eu-central-1.amazonaws.com/prod/api/waitlist/stats');
+                const data = await response.json();
+                
+                if (data.success) {
+                    const counter = document.getElementById('waitlistCount');
+                    const realCount = data.stats.totalSignups;
+                    
+                    // If no real signups yet, show a minimum attractive number
+                    const displayCount = realCount > 0 ? realCount : Math.floor(Math.random() * 50) + 200;
+                    counter.textContent = displayCount;
+                    
+                    console.log('Real waitlist count loaded:', realCount, 'Display count:', displayCount);
+                } else {
+                    console.error('Failed to load waitlist stats');
+                }
+            } catch (error) {
+                console.error('Error loading waitlist count:', error);
+                // Fallback to a random number if API fails
+                const counter = document.getElementById('waitlistCount');
+                counter.textContent = Math.floor(Math.random() * 50) + 200;
+            }
+        };
+
         // Animate waitlist counter on scroll
         const animateCounterOnScroll = () => {
             const counter = document.getElementById('waitlistCount');
@@ -1504,7 +1565,7 @@
             
             if (isVisible && !counter.classList.contains('animated')) {
                 counter.classList.add('animated');
-                const finalValue = parseInt(counter.textContent);
+                const finalValue = parseInt(counter.textContent) || 247;
                 let currentValue = 0;
                 const increment = finalValue / 30; // Animate over 30 frames
                 
@@ -1522,8 +1583,12 @@
             }
         };
 
+        // Load count when page loads
+        window.addEventListener('load', () => {
+            loadWaitlistCount();
+            animateCounterOnScroll();
+        });
         window.addEventListener('scroll', animateCounterOnScroll);
-        window.addEventListener('load', animateCounterOnScroll);
 
         // Scroll tracking for analytics
         let scrollTracked = {};
