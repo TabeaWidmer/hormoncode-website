@@ -124,3 +124,4 @@ Bei Problemen:
 3. GitHub Pages Status: Repository → Settings → Pages
 
 **Website ist bereit für professionelle Nutzung!** 🎉
+

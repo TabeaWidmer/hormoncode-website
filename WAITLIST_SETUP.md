@@ -258,3 +258,4 @@ Bei Fragen oder Problemen:
 - **Daten:** Gespeichert in `waitlist-data.json`
 
 Das Waitlist-System ist produktionsbereit und kann sofort für User-Testing eingesetzt werden! 🚀
+

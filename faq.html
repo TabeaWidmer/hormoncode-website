@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Häufige Fragen (FAQ) - HormonCode</title>
+    <meta name="description" content="Häufige Fragen und Antworten zu HormonCode 40+ - Alles was Sie über die KI-basierte Gesundheits-App wissen müssen">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSN865W9KQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RSN865W9KQ');
+    </script>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== PROFESSIONAL DESIGN SYSTEM ===== */
+        :root {
+          /* Premium Color Palette */
+          --primary-50: #fdf2f8;
+          --primary-100: #fce7f3;
+          --primary-200: #fbcfe8;
+          --primary-300: #f9a8d4;
+          --primary-400: #f472b6;
+          --primary-500: #ec4899;
+          --primary-600: #db2777;
+          --primary-700: #be185d;
+          --primary-800: #9d174d;
+          
+          --secondary-50: #f0fdf4;
+          --secondary-100: #dcfce7;
+          --secondary-200: #bbf7d0;
+          --secondary-300: #86efac;
+          --secondary-400: #4ade80;
+          --secondary-500: #22c55e;
+          --secondary-600: #16a34a;
+          --secondary-700: #15803d;
+          
+          --neutral-50: #fafafa;
+          --neutral-100: #f5f5f5;
+          --neutral-200: #e5e5e5;
+          --neutral-300: #d4d4d4;
+          --neutral-400: #a3a3a3;
+          --neutral-500: #737373;
+          --neutral-600: #525252;
+          --neutral-700: #404040;
+          --neutral-800: #262626;
+          --neutral-900: #171717;
+          
+          /* Spacing */
+          --space-1: 0.25rem;
+          --space-2: 0.5rem;
+          --space-3: 0.75rem;
+          --space-4: 1rem;
+          --space-6: 1.5rem;
+          --space-8: 2rem;
+          --space-12: 3rem;
+          --space-16: 4rem;
+          --space-20: 5rem;
+          --space-24: 6rem;
+          
+          /* Typography */
+          --text-xs: 0.75rem;
+          --text-sm: 0.875rem;
+          --text-base: 1rem;
+          --text-lg: 1.125rem;
+          --text-xl: 1.25rem;
+          --text-2xl: 1.5rem;
+          --text-3xl: 1.875rem;
+          --text-4xl: 2.25rem;
+          --text-5xl: 3rem;
+          --text-6xl: 3.75rem;
+        }
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-feature-settings: 'cv01', 'cv03', 'cv04', 'cv11';
+            line-height: 1.6;
+            color: var(--neutral-800);
+            background: linear-gradient(to bottom right, var(--primary-50), var(--secondary-50));
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: var(--space-4) 0;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--neutral-900);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-icon i {
+            color: white;
+            font-size: 18px;
+        }
+
+        .back-link {
+            color: var(--primary-600);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-700);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            margin-top: 100px;
+            padding: var(--space-16) 0;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: var(--space-16);
+        }
+
+        .page-title {
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: var(--space-4);
+        }
+
+        .page-subtitle {
+            font-size: var(--text-lg);
+            color: var(--neutral-600);
+        }
+
+        .content-card {
+            background: white;
+            padding: var(--space-8);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--neutral-200);
+        }
+
+        .faq-item {
+            margin-bottom: var(--space-8);
+            border-bottom: 1px solid var(--neutral-200);
+            padding-bottom: var(--space-6);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            color: var(--primary-600);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-3);
+        }
+
+        .faq-number {
+            background: var(--primary-100);
+            color: var(--primary-700);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-sm);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .faq-answer {
+            color: var(--neutral-700);
+            line-height: 1.7;
+            margin-left: calc(32px + var(--space-3));
+        }
+
+        .faq-answer p {
+            margin-bottom: var(--space-4);
+        }
+
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background: var(--secondary-50);
+            padding: var(--space-6);
+            border-radius: 12px;
+            border-left: 4px solid var(--secondary-500);
+            margin: var(--space-6) 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--neutral-800);
+        }
+
+        .info-box {
+            background: var(--primary-50);
+            padding: var(--space-6);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-500);
+            margin: var(--space-6) 0;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--neutral-800);
+        }
+
+        .contact-info {
+            background: var(--neutral-50);
+            padding: var(--space-6);
+            border-radius: 12px;
+            border: 1px solid var(--neutral-200);
+            margin-top: var(--space-8);
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin-bottom: var(--space-2);
+            color: var(--neutral-700);
+        }
+
+        .contact-info a {
+            color: var(--primary-600);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--text-lg);
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            color: white;
+            padding: var(--space-8);
+            border-radius: 16px;
+            text-align: center;
+            margin-top: var(--space-8);
+        }
+
+        .cta-title {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+        }
+
+        .cta-text {
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-6);
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-600);
+            padding: var(--space-4) var(--space-8);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--text-lg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--neutral-900);
+            color: var(--neutral-300);
+            text-align: center;
+            padding: var(--space-12) 0;
+            margin-top: var(--space-16);
+        }
+
+        footer p {
+            margin-bottom: var(--space-2);
+        }
+
+        .footer-highlight {
+            color: var(--primary-400);
+            font-weight: 500;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-6);
+            flex-wrap: wrap;
+            margin-top: var(--space-4);
+        }
+
+        .footer-links a {
+            color: var(--neutral-400);
+            text-decoration: none;
+            font-size: var(--text-sm);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-400);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-4);
+            }
+            
+            .page-title {
+                font-size: var(--text-3xl);
+            }
+            
+            .content-card {
+                padding: var(--space-6);
+            }
+            
+            .faq-answer {
+                margin-left: 0;
+                margin-top: var(--space-3);
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: var(--space-3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <span>HormonCode</span>
+            </a>
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Zurück zur Startseite
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Häufige Fragen (FAQ)</h1>
+                <p class="page-subtitle">Alles was Sie über HormonCode 40+ wissen müssen</p>
+            </div>
+
+            <div class="content-card">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <h2 class="faq-question">
+                        <span class="faq-number">1</span>
+                        Was ist HormonCode 40+?
+                    </h2>
+                    <div class="faq-answer">
+                        <p>HormonCode 40+ ist eine geplante KI-basierte Gesundheits-App, die Frauen ab 40 Jahren bei Ernährung, Bewegung, Schlaf und Symptom-Tracking in der Menopause unterstützt.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <h2 class="faq-question">
+                        <span class="faq-number">2</span>
+                        Ist die App bereits verfügbar?
+                    </h2>
+                    <div class="faq-answer">
+                        <p>Derzeit befinden wir uns in der Vorbereitung des Launches. Die Beta-Version wurde noch nicht veröffentlicht und wird nur ausgewählten Nutzerinnen zugänglich gemacht.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <h2 class="faq-question">
+                        <span class="faq-number">3</span>
+                        Wird die App kostenlos sein?
+                    </h2>
+                    <div class="faq-answer">
+                        <p>Nein, HormonCode 40+ wird nie komplett kostenlos angeboten werden. Die App nutzt komplexe Künstliche Intelligenz, die für uns als Anbieter fortlaufend erhebliche Kosten verursacht — etwa für KI-Modelle, Hosting der Infrastruktur, Datensicherheit sowie technischer Support und Weiterentwicklung.</p>
+                        <div class="info-box">
+                            <p>Um die hohe Qualität und Sicherheit dauerhaft zu gewährleisten, wird die Nutzung kostenpflichtig sein. Informationen zu Preisen und Abonnements werden vor dem offiziellen Start transparent kommuniziert.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <h2 class="faq-question">
+                        <span class="faq-number">4</span>
+                        Welche Daten werden auf der Landingpage erhoben?
+                    </h2>
+                    <div class="faq-answer">
+                        <p>Auf der Landingpage sammeln wir nur minimale Daten, z.B. deine E-Mail-Adresse bei der Newsletter-Anmeldung, um dich über Neuigkeiten zu informieren. Es werden keine sensiblen Gesundheitsdaten erhoben.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <h2 class="faq-question">
+                        <span class="faq-number">5</span>
+                        Wie schützt ihr meine Daten?
+                    </h2>
+                    <div class="faq-answer">
+                        <p>Wir handeln streng nach Schweizer Datenschutzgesetzen (DSG) und den Grundsätzen der DSGVO. Deine Daten werden vertraulich behandelt und gesichert gespeichert.</p>
+                        <div class="highlight-box">
+                            <p>Siehe <a href="datenschutz.html" style="color: var(--primary-600); text-decoration: none;">Datenschutzerklärung</a> für Details.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <h2 class="faq-question">
+                        <span class="faq-number">6</span>
+                        Kann ich mich für die Beta-Version anmelden?
+                    </h2>
+                    <div class="faq-answer">
+                        <p>Ja, über die Landingpage kannst du dich informieren und für eine Einladung zur Beta vormerken lassen. Die Teilnahme ist begrenzt.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item">
+                    <h2 class="faq-question">
+                        <span class="faq-number">7</span>
+                        Wie kann ich euch kontaktieren?
+                    </h2>
+                    <div class="faq-answer">
+                        <p>Schreibe bei Fragen gern an <a href="mailto:hello@hormoncode.com" style="color: var(--primary-600); text-decoration: none;">hello@hormoncode.com</a>.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="faq-item">
+                    <h2 class="faq-question">
+                        <span class="faq-number">8</span>
+                        Wo finde ich Impressum und Datenschutzerklärung?
+                    </h2>
+                    <div class="faq-answer">
+                        <p>Alle rechtlichen Hinweise sind auf der Landingpage klar und dauerhaft verlinkt.</p>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="cta-section">
+                    <h3 class="cta-title">Noch Fragen?</h3>
+                    <p class="cta-text">Kontaktieren Sie uns gerne für weitere Informationen</p>
+                    <a href="mailto:hello@hormoncode.com" class="cta-button">
+                        <i class="fas fa-envelope"></i> E-Mail senden
+                    </a>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <p><strong>Direkter Kontakt:</strong></p>
+                    <p><a href="mailto:hello@hormoncode.com">hello@hormoncode.com</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 <span class="footer-highlight">HormonCode</span>. Alle Rechte vorbehalten.</p>
+            <p>Innovating Women's Health with Artificial Intelligence</p>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+                <a href="faq.html">FAQ</a>
+                <a href="mailto:hello@hormoncode.com">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

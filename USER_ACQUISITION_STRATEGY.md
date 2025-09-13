@@ -261,3 +261,4 @@ fbq('track', 'Lead', {
 5. **Retargeting:** Pixel installieren
 
 Die Landing Page ist jetzt SEO-optimiert. Nächste Schritte: Google Analytics einrichten und erste Content-Pieces erstellen!
+

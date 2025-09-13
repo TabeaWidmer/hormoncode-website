@@ -183,3 +183,4 @@ firebase.analytics().logEvent('waitlist_signup', {
 4. **Attribution:** Multi-Channel-Funnels für komplexe Customer Journeys
 
 **Ready to track! 🚀**
+
