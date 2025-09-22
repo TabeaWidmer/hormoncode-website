@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Häufige Fragen (FAQ) - HormonCode</title>
-    <meta name="description" content="Häufige Fragen und Antworten zu HormonCode 40+ - Alles was Sie über die KI-basierte Gesundheits-App wissen müssen">
+    <title>Integritetspolicy - HormonCode</title>
+    <meta name="description" content="Integritetspolicy för HormonCode - Hur vi skyddar och hanterar dina personuppgifter">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSN865W9KQ"></script>
@@ -193,55 +193,40 @@
             border: 1px solid var(--neutral-200);
         }
 
-        .faq-item {
+        .section {
             margin-bottom: var(--space-8);
-            border-bottom: 1px solid var(--neutral-200);
-            padding-bottom: var(--space-6);
         }
 
-        .faq-item:last-child {
-            border-bottom: none;
+        .section:last-child {
             margin-bottom: 0;
-            padding-bottom: 0;
         }
 
-        .faq-question {
+        .section-title {
             color: var(--primary-600);
             font-size: var(--text-xl);
             font-weight: 600;
             margin-bottom: var(--space-4);
             display: flex;
-            align-items: flex-start;
-            gap: var(--space-3);
-        }
-
-        .faq-number {
-            background: var(--primary-100);
-            color: var(--primary-700);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: var(--text-sm);
-            font-weight: 700;
-            flex-shrink: 0;
-            margin-top: 2px;
+            gap: var(--space-2);
         }
 
-        .faq-answer {
+        .section-content {
             color: var(--neutral-700);
             line-height: 1.7;
-            margin-left: calc(32px + var(--space-3));
         }
 
-        .faq-answer p {
+        .section-content p {
             margin-bottom: var(--space-4);
         }
 
-        .faq-answer p:last-child {
-            margin-bottom: 0;
+        .section-content ul {
+            margin: var(--space-4) 0;
+            padding-left: var(--space-6);
+        }
+
+        .section-content li {
+            margin-bottom: var(--space-2);
         }
 
         .highlight-box {
@@ -258,27 +243,12 @@
             color: var(--neutral-800);
         }
 
-        .info-box {
-            background: var(--primary-50);
-            padding: var(--space-6);
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-500);
-            margin: var(--space-6) 0;
-        }
-
-        .info-box p {
-            margin-bottom: 0;
-            font-weight: 500;
-            color: var(--neutral-800);
-        }
-
         .contact-info {
             background: var(--neutral-50);
             padding: var(--space-6);
             border-radius: 12px;
             border: 1px solid var(--neutral-200);
             margin-top: var(--space-8);
-            text-align: center;
         }
 
         .contact-info p {
@@ -290,49 +260,20 @@
             color: var(--primary-600);
             text-decoration: none;
             font-weight: 500;
-            font-size: var(--text-lg);
         }
 
         .contact-info a:hover {
             text-decoration: underline;
         }
 
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
-            color: white;
-            padding: var(--space-8);
-            border-radius: 16px;
+        .effective-date {
             text-align: center;
             margin-top: var(--space-8);
-        }
-
-        .cta-title {
-            font-size: var(--text-2xl);
-            font-weight: 700;
-            margin-bottom: var(--space-4);
-        }
-
-        .cta-text {
-            font-size: var(--text-lg);
-            margin-bottom: var(--space-6);
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: var(--primary-600);
-            padding: var(--space-4) var(--space-8);
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: var(--text-lg);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            padding: var(--space-4);
+            background: var(--neutral-100);
+            border-radius: 8px;
+            font-weight: 500;
+            color: var(--neutral-600);
         }
 
         /* ===== FOOTER ===== */
@@ -386,11 +327,6 @@
                 padding: var(--space-6);
             }
             
-            .faq-answer {
-                margin-left: 0;
-                margin-top: var(--space-3);
-            }
-            
             .footer-links {
                 flex-direction: column;
                 gap: var(--space-3);
@@ -402,15 +338,15 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="index_de.html" class="logo">
+            <a href="index_sv.html" class="logo">
                 <div class="logo-icon">
                     <i class="fas fa-heartbeat"></i>
                 </div>
                 <span>HormonCode</span>
             </a>
-            <a href="index_de.html" class="back-link">
+            <a href="index_sv.html" class="back-link">
                 <i class="fas fa-arrow-left"></i>
-                Zurück zur Startseite
+                Tillbaka
             </a>
         </nav>
     </header>
@@ -419,118 +355,178 @@
     <main>
         <div class="container">
             <div class="page-header">
-                <h1 class="page-title">Häufige Fragen (FAQ)</h1>
-                <p class="page-subtitle">Alles was Sie über HormonCode 40+ wissen müssen</p>
+                <h1 class="page-title">Integritetspolicy</h1>
+                <p class="page-subtitle">Skydd av dina personuppgifter och integritet</p>
             </div>
 
             <div class="content-card">
-                <!-- FAQ 1 -->
-                <div class="faq-item">
-                    <h2 class="faq-question">
-                        <span class="faq-number">1</span>
-                        Was ist HormonCode 40+?
+                <!-- Ansvarig -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-user-shield"></i>
+                        Ansvarig
                     </h2>
-                    <div class="faq-answer">
-                        <p>HormonCode 40+ ist eine geplante KI-basierte Gesundheits-App, die Frauen ab 40 Jahren bei Ernährung, Bewegung, Schlaf und Symptom-Tracking in der Menopause unterstützt.</p>
+                    <div class="section-content">
+                        <p>Belvoro Widmer<br>
+                        Birkenweg 18<br>
+                        3014 Bern<br>
+                        Schweiz<br>
+                        E-post: hello@hormoncode.com</p>
                     </div>
                 </div>
 
-                <!-- FAQ 2 -->
-                <div class="faq-item">
-                    <h2 class="faq-question">
-                        <span class="faq-number">2</span>
-                        Ist die App bereits verfügbar?
+                <!-- 1. Allmänt om dataskydd -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-shield-alt"></i>
+                        1. Allmänt om dataskydd
                     </h2>
-                    <div class="faq-answer">
-                        <p>Derzeit befinden wir uns in der Vorbereitung des Launches. Die Beta-Version wurde noch nicht veröffentlicht und wird nur ausgewählten Nutzerinnen zugänglich gemacht.</p>
+                    <div class="section-content">
+                        <p>Skyddet av dina personuppgifter är viktigt för oss. Vi behandlar personuppgifter konfidentiellt och i enlighet med lagstiftningen om dataskydd, särskilt den schweiziska dataskyddslagen (DSG) och principerna i GDPR.</p>
                     </div>
                 </div>
 
-                <!-- FAQ 3 -->
-                <div class="faq-item">
-                    <h2 class="faq-question">
-                        <span class="faq-number">3</span>
-                        Wird die App kostenlos sein?
+                <!-- 2. Insamling och behandling av personuppgifter -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-database"></i>
+                        2. Insamling och behandling av personuppgifter
                     </h2>
-                    <div class="faq-answer">
-                        <p>Nein, HormonCode 40+ wird nie komplett kostenlos angeboten werden. Die App nutzt komplexe Künstliche Intelligenz, die für uns als Anbieter fortlaufend erhebliche Kosten verursacht — etwa für KI-Modelle, Hosting der Infrastruktur, Datensicherheit sowie technischer Support und Weiterentwicklung.</p>
-                        <div class="info-box">
-                            <p>Um die hohe Qualität und Sicherheit dauerhaft zu gewährleisten, wird die Nutzung kostenpflichtig sein. Informationen zu Preisen und Abonnements werden vor dem offiziellen Start transparent kommuniziert.</p>
-                        </div>
+                    <div class="section-content">
+                        <p>Vi samlar in och behandlar följande data när du använder vår webbplats eller app:</p>
+                        <ul>
+                            <li><strong>Grunduppgifter:</strong> Namn, e-postadress, plats (land/region)</li>
+                            <li><strong>Användningsdata:</strong> Information om användning av appen/webbplatsen, t.ex. loggdata, cookies</li>
+                            <li><strong>Hälsodata:</strong> Endast med ditt uttryckliga samtycke och inom ramen för appfunktioner (symptom, dagbok, wearables)</li>
+                            <li><strong>Kommunikationsdata:</strong> Meddelanden, kontaktformulär, supportförfrågningar</li>
+                        </ul>
+                        <p>Användning av data sker endast i den utsträckning som är nödvändig för att tillhandahålla funktioner och tjänster eller om du har gett ditt uttryckliga samtycke.</p>
                     </div>
                 </div>
 
-                <!-- FAQ 4 -->
-                <div class="faq-item">
-                    <h2 class="faq-question">
-                        <span class="faq-number">4</span>
-                        Welche Daten werden auf der Landingpage erhoben?
+                <!-- 3. Syfte med databehandling -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-target"></i>
+                        3. Syfte med databehandling
                     </h2>
-                    <div class="faq-answer">
-                        <p>Auf der Landingpage sammeln wir nur minimale Daten, z.B. deine E-Mail-Adresse bei der Newsletter-Anmeldung, um dich über Neuigkeiten zu informieren. Es werden keine sensiblen Gesundheitsdaten erhoben.</p>
+                    <div class="section-content">
+                        <p>Vi använder de insamlade uppgifterna för följande ändamål:</p>
+                        <ul>
+                            <li>Drift, underhåll och utveckling av appen och webbplatsen</li>
+                            <li>Personalisering och optimering av användarupplevelsen</li>
+                            <li>Skapande av hälsorapporter och coachrekommendationer</li>
+                            <li>Skickande av nyhetsbrev och viktiga meddelanden (endast med uttryckligt samtycke)</li>
+                            <li>Efterlevnad av lagliga förpliktelser och skydd av användarnas rättigheter</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- FAQ 5 -->
-                <div class="faq-item">
-                    <h2 class="faq-question">
-                        <span class="faq-number">5</span>
-                        Wie schützt ihr meine Daten?
+                <!-- 4. Rättslig grund för behandling -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-balance-scale"></i>
+                        4. Rättslig grund för behandling
                     </h2>
-                    <div class="faq-answer">
-                        <p>Wir handeln streng nach Schweizer Datenschutzgesetzen (DSG) und den Grundsätzen der DSGVO. Deine Daten werden vertraulich behandelt und gesichert gespeichert.</p>
-                        <div class="highlight-box">
-                            <p>Siehe <a href="datenschutz.html" style="color: var(--primary-600); text-decoration: none;">Datenschutzerklärung</a> für Details.</p>
-                        </div>
+                    <div class="section-content">
+                        <p>Databehandlingen baseras på:</p>
+                        <ul>
+                            <li><strong>Art. 6.1 lit. a GDPR:</strong> Användarens samtycke</li>
+                            <li><strong>Art. 6.1 lit. b GDPR:</strong> Uppfyllande av avtal (tillhandahållande av apptjänst)</li>
+                            <li><strong>Art. 6.1 lit. c GDPR:</strong> Lagliga förpliktelser</li>
+                            <li><strong>Schweizisk dataskyddslag (DSG)</strong></li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- FAQ 6 -->
-                <div class="faq-item">
-                    <h2 class="faq-question">
-                        <span class="faq-number">6</span>
-                        Kann ich mich für die Beta-Version anmelden?
+                <!-- 5. Vidarebefordran till tredje parter -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-share-alt"></i>
+                        5. Vidarebefordran till tredje parter
                     </h2>
-                    <div class="faq-answer">
-                        <p>Ja, über die Landingpage kannst du dich informieren und für eine Einladung zur Beta vormerken lassen. Die Teilnahme ist begrenzt.</p>
+                    <div class="section-content">
+                        <p>Personuppgifter säljs eller hyrs inte ut till tredje parter. Vidarebefordran sker endast:</p>
+                        <ul>
+                            <li>Till tjänsteleverantörer (t.ex. hosting, betalningsprocessorer, molntjänster) som är kontraktuellt bundna till datasäkerhet</li>
+                            <li>Vid laglig förpliktelse, t.ex. myndighetsförfrågningar</li>
+                            <li>Till samarbetspartners inom B2B-området, endast anonymiserade eller pseudonymiserade sammanfattningar med opt-in</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- FAQ 7 -->
-                <div class="faq-item">
-                    <h2 class="faq-question">
-                        <span class="faq-number">7</span>
-                        Wie kann ich euch kontaktieren?
+                <!-- 6. Dataöverföring utomlands -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-globe"></i>
+                        6. Dataöverföring utomlands
                     </h2>
-                    <div class="faq-answer">
-                        <p>Schreibe bei Fragen gern an <a href="mailto:hello@hormoncode.com" style="color: var(--primary-600); text-decoration: none;">hello@hormoncode.com</a>.</p>
+                    <div class="section-content">
+                        <p>Data lagras och behandlas inom Schweiz och eventuellt inom EU (t.ex. hosting i eu-central-1, eu-west-2). Vi säkerställer att en lämplig nivå av dataskydd garanteras.</p>
                     </div>
                 </div>
 
-                <!-- FAQ 8 -->
-                <div class="faq-item">
-                    <h2 class="faq-question">
-                        <span class="faq-number">8</span>
-                        Wo finde ich Impressum und Datenschutzerklärung?
+                <!-- 7. Cookies och spårningsteknologier -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-cookie-bite"></i>
+                        7. Cookies och spårningsteknologier
                     </h2>
-                    <div class="faq-answer">
-                        <p>Alle rechtlichen Hinweise sind auf der Landingpage klar und dauerhaft verlinkt.</p>
+                    <div class="section-content">
+                        <p>Vår webbplats/app använder tekniskt nödvändiga cookies samt valfria analys- och spårningsteknologier endast med ditt aktiva samtycke (cookie-banner).</p>
                     </div>
                 </div>
 
-                <!-- CTA Section -->
-                <div class="cta-section">
-                    <h3 class="cta-title">Noch Fragen?</h3>
-                    <p class="cta-text">Kontaktieren Sie uns gerne für weitere Informationen</p>
-                    <a href="mailto:hello@hormoncode.com" class="cta-button">
-                        <i class="fas fa-envelope"></i> E-Mail senden
-                    </a>
+                <!-- 8. Dina rättigheter -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-user-check"></i>
+                        8. Dina rättigheter
+                    </h2>
+                    <div class="section-content">
+                        <p>Du har rätt till:</p>
+                        <ul>
+                            <li>Information om dina lagrade data</li>
+                            <li>Rättelse, radering eller begränsning av behandling</li>
+                            <li>Invändning mot behandling</li>
+                            <li>Dataportabilitet</li>
+                            <li>Återkallande av givna samtycken när som helst utan nackdelar</li>
+                        </ul>
+                        <p>För att utöva dina rättigheter kan du när som helst kontakta hello@hormoncode.com.</p>
+                    </div>
                 </div>
 
-                <!-- Contact Info -->
+                <!-- 9. Datasäkerhet -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-lock"></i>
+                        9. Datasäkerhet
+                    </h2>
+                    <div class="section-content">
+                        <p>Vi vidtar lämpliga tekniska och organisatoriska åtgärder för att skydda dina data mot obehörig åtkomst, förlust eller missbruk (kryptering, åtkomstkontroller).</p>
+                    </div>
+                </div>
+
+                <!-- 10. Ändringar av integritetspolicyn -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-edit"></i>
+                        10. Ändringar av integritetspolicyn
+                    </h2>
+                    <div class="section-content">
+                        <p>Denna integritetspolicy kan uppdateras från tid till annan. Den aktuella versionen publiceras alltid på webbplatsen.</p>
+                    </div>
+                </div>
+
+                <!-- Kontakt för dataskyddsförfrågningar -->
                 <div class="contact-info">
-                    <p><strong>Direkter Kontakt:</strong></p>
-                    <p><a href="mailto:hello@hormoncode.com">hello@hormoncode.com</a></p>
+                    <p><strong>Kontakt för dataskyddsförfrågningar:</strong></p>
+                    <p>E-post: <a href="mailto:hello@hormoncode.com">hello@hormoncode.com</a></p>
+                </div>
+
+                <!-- Giltighetsdatum -->
+                <div class="effective-date">
+                    Denna integritetspolicy gäller från och med 25.08.2025
                 </div>
             </div>
         </div>
@@ -539,17 +535,15 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 <span class="footer-highlight">HormonCode</span>. Alle Rechte vorbehalten.</p>
-            <p>Innovating Women's Health with Artificial Intelligence</p>
+            <p>&copy; 2025 <span class="footer-highlight">HormonCode</span>. Alla rättigheter förbehållna.</p>
+            <p>Innovation inom Kvinnors Hälsa med Artificiell Intelligens</p>
             <div class="footer-links">
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-                <a href="agb.html">AGB</a>
-                <a href="faq.html">FAQ</a>
+                <a href="impressum_sv.html">Impressum</a>
+                <a href="datenschutz_sv.html">Integritet</a>
+                <a href="agb_sv.html">Villkor</a>
                 <a href="mailto:hello@hormoncode.com">Kontakt</a>
             </div>
         </div>
     </footer>
 </body>
 </html>
-
